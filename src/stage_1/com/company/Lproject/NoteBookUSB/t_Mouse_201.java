@@ -1,4 +1,5 @@
-package stage_1.com.company.Lproject.NoteBookUSB;
+/*
+package com.company.Lproject.NoteBookUSB;
 
 // 鼠标就是一种USB设备
 public class t_Mouse_201 implements com.company.Lproject.NoteBookUSB.t_USB_199 {
@@ -16,3 +17,4 @@ public class t_Mouse_201 implements com.company.Lproject.NoteBookUSB.t_USB_199 {
         System.out.println("鼠标点击");
     }
 }
+*/

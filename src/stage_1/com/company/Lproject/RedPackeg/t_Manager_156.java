@@ -1,3 +1,4 @@
+/*
 package stage_1.com.company.Lproject.RedPackeg;
 
 import com.stage_1.Lproject.RedPackeg.t_User_155;
@@ -45,3 +46,4 @@ public class t_Manager_156 extends t_User_155 {
     return redList;
     }
 }
+*/

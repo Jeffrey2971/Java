@@ -1,4 +1,4 @@
-package stage_1.test;
+package test;
 
 /*
 题目：
@@ -13,9 +13,7 @@ package stage_1.test;
 要求使用自定义方法来实现筛选
  */
 
-import test.Practice_Class.t_Student_93;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -50,12 +48,12 @@ public class t_ArrayListRandom_92 {
     }
 
     public static void idea_two() {
-        ArrayList<t_Student_93> list = new ArrayList<>();
+        ArrayList<stage_1.test.Practice_Class.t_Student_93> list = new ArrayList<>();
 
-        t_Student_93 one = new t_Student_93("张雯蔚", 19);
-        t_Student_93 two = new t_Student_93("文蔚张", 20);
-        t_Student_93 three = new t_Student_93("蔚张雯", 21);
-        t_Student_93 four = new t_Student_93("雯蔚张", 22);
+        stage_1.test.Practice_Class.t_Student_93 one = new stage_1.test.Practice_Class.t_Student_93("张雯蔚", 19);
+        stage_1.test.Practice_Class.t_Student_93 two = new stage_1.test.Practice_Class.t_Student_93("文蔚张", 20);
+        stage_1.test.Practice_Class.t_Student_93 three = new stage_1.test.Practice_Class.t_Student_93("蔚张雯", 21);
+        stage_1.test.Practice_Class.t_Student_93 four = new stage_1.test.Practice_Class.t_Student_93("雯蔚张", 22);
 
         list.add(one);
         list.add(two);
@@ -64,7 +62,7 @@ public class t_ArrayListRandom_92 {
 
         // 遍历集合
         for (int i = 0; i < list.size(); i++) {
-            t_Student_93 stu = list.get(i);
+            stage_1.test.Practice_Class.t_Student_93 stu = list.get(i);
             System.out.println("姓名：" + stu.getName() + ",年龄：" + stu.getAge());
 
 

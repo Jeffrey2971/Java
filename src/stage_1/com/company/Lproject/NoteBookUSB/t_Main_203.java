@@ -1,3 +1,4 @@
+/*
 package stage_1.com.company.Lproject.NoteBookUSB;
 
 import Lproject.NoteBookUSB.t_Keyboard_202;
@@ -34,3 +35,4 @@ public class t_Main_203 {
         System.out.println(num);
     }
 }
+*/

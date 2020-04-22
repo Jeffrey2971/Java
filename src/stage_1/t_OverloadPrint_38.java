@@ -1,4 +1,4 @@
-package stage_1;
+package src.stage_1;
 
 /*
 byte short int long float double char boolean

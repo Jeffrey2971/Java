@@ -1,11 +1,12 @@
-package stage_2.Api01.Day05.chapter07;
+package Api01.Day05.chapter07;
 
 /*
 模拟卖票案例
 创建3个线程，同时开启，对共享的票进行出售
  */
 
-import stage_2.Api01.Day05.chapter08.t_RunnableImpl_297;
+
+import Api01.Day05.chapter08.t_RunnableImpl_297;
 
 public class t_Ticket_295 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package stage_2.Api01.Day05.chapter08;
+package Api01.Day05.chapter08;
 
 /*
 买票案例出现了线程安全问题，卖出了不存在的票和重复的票
@@ -40,9 +40,14 @@ public class t_RunnableImpl_297 implements Runnable {
         }
     }
 
-    public static synchronized void SellTicketStatic() {
-        // 同步代码块
-//        synchronized (this) {
+
+    /*
+    静态的同步方法
+    锁对象不能再是this，this是创建对象之后产生的，静态方法优先于对象
+    静态方法的锁对象是本类的class属性-->class文件对象（反射）
+     */
+    public static /*synchronized*/ void SellTicketStatic() {
+        synchronized (t_RunnableImpl_297.class) {
             /*synchronized (obj) {*/
             // 先判断票是否存在
             if (ticket > 0) {
@@ -58,7 +63,7 @@ public class t_RunnableImpl_297 implements Runnable {
 
             }
         }
-//    }
+    }
 
     /*
     定义一个同步方法

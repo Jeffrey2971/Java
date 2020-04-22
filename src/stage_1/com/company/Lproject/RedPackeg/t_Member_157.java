@@ -1,3 +1,4 @@
+/*
 package stage_1.com.company.Lproject.RedPackeg;
 
 import com.stage_1.Lproject.RedPackeg.t_User_155;
@@ -30,3 +31,4 @@ public class t_Member_157 extends t_User_155 {
 
 
 }
+*/

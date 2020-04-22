@@ -1,3 +1,4 @@
+/*
 package stage_1.com.company.Lproject.NoteBookUSB;
 
 import Lproject.NoteBookUSB.t_Keyboard_202;
@@ -23,3 +24,4 @@ public class t_Computer_200 {
         usb.close(); // 关闭设备
     }
 }
+*/
