@@ -17,6 +17,10 @@ public class t_Lambda_316 {
                 return a + b;
             }
         });
+        // 使用Lambda表达式简化匿名内部类的代码
+        invokeCalc(120, 130, (int a, int b) -> {
+            return a + b;
+        });
     }
 
     /*
@@ -29,4 +33,5 @@ public class t_Lambda_316 {
         int sum = c.calc(a, b);
         System.out.println(sum);
     }
+
 }
