@@ -1,6 +1,5 @@
 package com.itheima.demo01.BufferedStream;
 
-import java.io.*;
 import java.util.HashMap;
 
 /*

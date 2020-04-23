@@ -1,6 +1,5 @@
 package com.itheima.demo03.LambdaTest;
 
-import java.util.Arrays;
 import java.util.Comparator;
 
 /*

@@ -1,6 +1,5 @@
 package com.itheima.demo02.Stream;
 
-import java.util.*;
 import java.util.stream.Stream;
 
 /*

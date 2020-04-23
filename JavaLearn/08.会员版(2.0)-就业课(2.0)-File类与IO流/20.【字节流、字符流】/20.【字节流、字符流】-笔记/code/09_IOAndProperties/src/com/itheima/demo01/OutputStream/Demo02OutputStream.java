@@ -3,7 +3,6 @@ package com.itheima.demo01.OutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
 /*
     一次写多个字节的方法:

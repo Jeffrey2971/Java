@@ -1,6 +1,5 @@
 package com.itheima.demo04.ObjectStream;
 
-import java.io.*;
 import java.util.ArrayList;
 
 /*

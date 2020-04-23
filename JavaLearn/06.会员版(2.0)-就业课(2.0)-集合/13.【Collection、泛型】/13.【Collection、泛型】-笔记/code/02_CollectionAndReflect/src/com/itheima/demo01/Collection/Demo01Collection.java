@@ -1,6 +1,5 @@
 package com.itheima.demo01.Collection;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 

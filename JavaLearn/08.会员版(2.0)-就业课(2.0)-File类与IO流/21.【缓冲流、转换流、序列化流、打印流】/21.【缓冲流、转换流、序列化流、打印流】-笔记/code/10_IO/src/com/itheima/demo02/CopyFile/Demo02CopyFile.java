@@ -1,7 +1,5 @@
 package com.itheima.demo02.CopyFile;
 
-import java.io.*;
-
 /*
     文件复制练习:一读一写
 

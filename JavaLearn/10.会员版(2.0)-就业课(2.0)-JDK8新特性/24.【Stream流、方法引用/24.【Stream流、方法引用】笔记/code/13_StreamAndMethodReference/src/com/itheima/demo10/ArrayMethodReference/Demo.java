@@ -1,7 +1,5 @@
 package com.itheima.demo10.ArrayMethodReference;
 
-import java.util.Arrays;
-
 /*
     数组的构造器引用
  */

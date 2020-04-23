@@ -1,7 +1,5 @@
 package com.itheima.demo05.System;
 
-import java.util.Arrays;
-
 /*
     java.lang.System类中提供了大量的静态方法，可以获取与系统相关的信息或系统级操作，在System类的API文档中，常用的方法有：
         public static long currentTimeMillis()：返回以毫秒为单位的当前时间。

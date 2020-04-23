@@ -1,6 +1,6 @@
 package cn.itcast.day07.demo01;
 
-import java.util.Scanner; // 1. 导包
+import java.util.Scanner;
 
 /*
 Scanner类的功能：可以实现键盘输入数据，到程序当中。

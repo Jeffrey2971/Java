@@ -1,7 +1,5 @@
 package com.itheima.demo05.Lambda;
 
-import java.util.Arrays;
-
 /*
     Lambda表达式有参数有返回值的练习
     需求:

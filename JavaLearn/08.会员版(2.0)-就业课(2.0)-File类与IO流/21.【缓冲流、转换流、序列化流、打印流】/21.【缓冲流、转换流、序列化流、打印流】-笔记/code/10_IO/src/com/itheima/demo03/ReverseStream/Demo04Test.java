@@ -1,7 +1,5 @@
 package com.itheima.demo03.ReverseStream;
 
-import java.io.*;
-
 /*
     练习：转换文件编码
         将GBK编码的文本文件，转换为UTF-8编码的文本文件。
