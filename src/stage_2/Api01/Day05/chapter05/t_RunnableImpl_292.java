@@ -1,4 +1,4 @@
-package stage_2.Api01.Day05.chapter05;
+package Api01.Day05.chapter05;
 
 // 1、创建一个Runnable接口的实现类
 

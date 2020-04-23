@@ -1,4 +1,4 @@
-package stage_2.Api01.Day05.chapter05;
+package Api01.Day05.chapter05;
 
 /*
     static void	sleep(long millis)在指定的毫秒数内让当前正在执行的线程休眠（暂停执行），此操作受到系统计时器和调度程序精度和准确性的影响。

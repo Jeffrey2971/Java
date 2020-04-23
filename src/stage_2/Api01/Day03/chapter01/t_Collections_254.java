@@ -1,4 +1,4 @@
-package stage_2.Api01.Day03.chapter01;
+package Api01.Day03.chapter01;
 
 /*
 java.utils.Collections`是集合工具类，用来对集合进行操作。部分方法如下：
@@ -7,7 +7,6 @@ java.utils.Collections`是集合工具类，用来对集合进行操作。部分
  */
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class t_Collections_254 {

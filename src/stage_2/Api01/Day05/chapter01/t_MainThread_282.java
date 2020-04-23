@@ -1,4 +1,4 @@
-package stage_2.Api01.Day05.chapter01;
+package Api01.Day05.chapter01;
 
 /*
 主线程：执行主方法（main）的线程
@@ -12,11 +12,11 @@ CPU就可以通过这个路径来执行main方法
 
 public class t_MainThread_282 {
     public static void main(String[] args) {
-        t_Person_283 p1 = new t_Person_283("张雯蔚");
+        stage_2.Api01.Day05.chapter01.t_Person_283 p1 = new stage_2.Api01.Day05.chapter01.t_Person_283("张雯蔚");
         p1.run();
         System.out.println(0 / 0);
 
-        t_Person_283 p2 = new t_Person_283("玮海琼");
+        stage_2.Api01.Day05.chapter01.t_Person_283 p2 = new stage_2.Api01.Day05.chapter01.t_Person_283("玮海琼");
         p2.run();
     }
 }

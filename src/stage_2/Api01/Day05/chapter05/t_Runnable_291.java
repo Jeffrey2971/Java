@@ -1,4 +1,4 @@
-package stage_2.Api01.Day05.chapter05;
+package Api01.Day05.chapter05;
 
 /*
 创建多线程程序的第二种方式：实现runnable接口

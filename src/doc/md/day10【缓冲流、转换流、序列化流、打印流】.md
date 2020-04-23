@@ -261,7 +261,7 @@ public class BufferedTest {
             // 获取map中文本
             String value = lineMap.get(key);
           	// 写出拼接文本
-            bw.write(key+"."+value);
+            bw.write(key+""+value);
           	// 写出换行
             bw.newLine();
         }

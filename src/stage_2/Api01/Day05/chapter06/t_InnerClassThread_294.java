@@ -1,4 +1,4 @@
-package stage_2.Api01.Day05.chapter06;
+package Api01.Day05.chapter06;
 
 /*
 匿名内部类方式实现线程创建

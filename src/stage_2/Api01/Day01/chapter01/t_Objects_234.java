@@ -1,4 +1,4 @@
-package stage_2.Api01.Day01.chapter01;
+package Api01.Day01.chapter01;
 
 import java.util.Objects;
 
