@@ -27,5 +27,8 @@ public class t_Lambda_311 {
             System.out.println(Thread.currentThread().getName() + "使用lambda创建了新的线程");
         }
         ).start();
+
+        // 优化省略Lambda
+        new Thread(() -> System.out.println(Thread.currentThread().getName() + "使用lambda创建了新的线程")).start();
     }
 }

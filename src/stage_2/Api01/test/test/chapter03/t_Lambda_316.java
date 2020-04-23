@@ -22,6 +22,9 @@ public class t_Lambda_316 {
         invokeCalc(120, 130, (int a, int b) -> {
             return a + b;
         });
+
+        // 优化Lambda
+        invokeCalc(120, 130, (a, b) -> a + b);
     }
 
     /*

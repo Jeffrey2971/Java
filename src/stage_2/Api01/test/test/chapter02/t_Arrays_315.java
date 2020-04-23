@@ -27,9 +27,12 @@ public class t_Arrays_315 {
         });*/
 
         // 使用lambda表达式，简化匿名内部类
-        Arrays.sort(array, (t_Person_314 o1, t_Person_314 o2) ->{
+        Arrays.sort(array, (t_Person_314 o1, t_Person_314 o2) -> {
             return o1.getAge() - o2.getAge();
         });
+
+        // 优化Lambda
+        Arrays.sort(array, (o1, o2) -> o1.getAge() - o2.getAge());
 
         // 遍历数组
         for (t_Person_314 p : array) {

@@ -17,13 +17,11 @@ public class t_Lambda_312 {
         });
 
         // 使用lambda表达式，简化匿名内部类代码
-        invokeCook(()->{
-            System.out.println("吃饭了2");
-        });
+        invokeCook(() -> System.out.println("吃饭了2"));
     }
 
     // 定义一个方法，参数传递Cook接口，方法内部调用Cook接口中的方法叫makeFood
-    public static void invokeCook(t_CookImpl_313 cook){
+    public static void invokeCook(t_CookImpl_313 cook) {
         cook.makeFood();
     }
 }
