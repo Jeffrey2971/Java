@@ -61,8 +61,10 @@ public class t_InputStream_334 {
             不知道文件中有多少字节所以使用while循环
             while结束条件，读取到-1的时候结束
 
-
-            布尔表达式
+            布尔表达式(len = fis.read())!=-1
+                1、fis.read()：读取一个字节
+                2、len = fis.read()：把读取到的字节赋值给变量len
+                3、(len = fis.read())!=-1：判断变量len是否部不等于-1
          */
         int len = 0; // 记录读取到的字节
         while ((len = fis.read())!=-1) {
