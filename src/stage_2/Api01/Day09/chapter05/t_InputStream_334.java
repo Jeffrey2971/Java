@@ -60,7 +60,14 @@ public class t_InputStream_334 {
             以上读取文件是一个重复的过程，所以可以使用循环优化
             不知道文件中有多少字节所以使用while循环
             while结束条件，读取到-1的时候结束
+
+
+            布尔表达式
          */
+        int len = 0; // 记录读取到的字节
+        while ((len = fis.read())!=-1) {
+            System.out.print((char) len);
+        }
         fis.close();
     }
 }
