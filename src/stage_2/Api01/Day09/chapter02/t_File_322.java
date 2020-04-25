@@ -41,11 +41,15 @@ public class t_File_322 {
 
         File f3 = new File("新建文件夹/aaa/bbb/ccc/ddd");
         boolean b3 = f3.mkdirs();
-        System.out.println("b3" + b3); // false：mkdir方法不能创建多级文件夹
+        System.out.println("b3" + b3);
 
         File f4 = new File("abc.txt");
         boolean b4 = f4.mkdir();
-        System.out.println("b4" + b4); // false：mkdir方法不能创建多级文件夹
+        System.out.println("b4" + b4);
+
+        File f5 = new File("/home/home/test");
+        boolean b5 = f5.mkdir();
+        System.out.println("b5" + b5); // 不会抛出异常，路径不存在则不会创建
     }
 
 
