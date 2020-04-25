@@ -23,7 +23,30 @@ package Api01.Day09.chapter04;
                 1、创建一个FileOutputStream对象
                 2、会根据构造方法中传递的文件/文件路径，创建一个空的文件
                 3、会把FileOutputStream对象指向创建好的文件
+
+        写入数据的原理（内存-->硬盘）
+            Java程序-->JVM（Java虚拟机）-->OS（操作系统）-->OS调用写数据的方法-->把数据写入到文件中
+
+        字节输出流的使用步骤：
+            1、创建FileOutputStream对象，构造方法中传递写入数据的目的地
+            2、调用FileOutputStream对象中的write方法，把数据写入到文件中
+            3、释放资源（流使用会占用一定的内存，使用完毕需把内存释放，提高程序的效率）
  */
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class t_OutputStream_331 {
+    public static void main(String[] args) throws IOException {
+        // 1、创建FileOutputStream对象，构造方法中传递写入数据的目的地
+        FileOutputStream fos = new FileOutputStream("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chapter04/test.txt");
+
+        // 2、调用FileOutputStream对象中的write方法，把数据写入到文件中
+        //      public abstract void write(int b) :将指定的字节输出流。
+        fos.write(97);
+
+        // 3、释放资源（流使用会占用一定的内存，使用完毕需把内存释放，提高程序的效率）
+        fos.close();
+
+    }
 }
