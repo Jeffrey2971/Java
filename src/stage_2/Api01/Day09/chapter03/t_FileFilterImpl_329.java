@@ -1,12 +1,13 @@
-package com.itheima.demo03Filter;
+package Api01.Day09.chapter03;
+
+/*
+    创建过滤器FilFilter的实现类，重写过滤方法accept，定义过滤规则
+ */
 
 import java.io.File;
 import java.io.FileFilter;
 
-/*
-    创建过滤器FileFilter的实现类,重写过滤方法accept,定义过滤规则
- */
-public class FileFilterImpl implements FileFilter{
+public class t_FileFilterImpl_329 implements FileFilter {
     @Override
     public boolean accept(File pathname) {
         /*

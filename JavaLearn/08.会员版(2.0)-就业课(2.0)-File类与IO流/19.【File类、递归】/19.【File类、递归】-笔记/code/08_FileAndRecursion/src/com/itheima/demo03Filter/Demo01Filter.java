@@ -37,7 +37,7 @@ import java.io.File;
  */
 public class Demo01Filter {
     public static void main(String[] args) {
-        File file = new File("c:\\abc");
+        File file = new File("/home/jeffrey/JavaLearn");
         getAllFile(file);
     }
 
