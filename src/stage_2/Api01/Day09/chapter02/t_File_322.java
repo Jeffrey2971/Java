@@ -14,8 +14,31 @@ import java.io.IOException;
 public class t_File_322 {
     public static void main(String[] args) throws IOException {
         // show01();
-        show02();
+        // show02();
+        show03();
     }
+
+
+    /*
+        public boolean delete() :删除由此File表示的文件或目录。
+        此方法，可以删除构造方法路径中给出的文件/文件夹
+        返回值：布尔值（true/false）
+            true：文件/文件夹删除成功
+            false：文件夹中有内容，不会删除返回false，构造方法中的路径不存在也返回false
+
+        注意事项：
+            delete方法是直接在硬盘删除文件/文件夹，不会进入回收站，删除需谨慎
+     */
+    private static void show03() {
+        File f1 = new File("/home/jeffrey/IdeaProjects/JavaLearn/新建文件夹");
+        boolean b1 = f1.delete();
+        System.out.println("b1" + b1);
+
+        File f2 = new File("test.txt");
+        boolean b2 = f2.delete();
+        System.out.println("b2" + b2);
+    }
+
 
 
     /*
