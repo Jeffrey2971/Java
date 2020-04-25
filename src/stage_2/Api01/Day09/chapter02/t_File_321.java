@@ -1,6 +1,7 @@
 package Api01.Day09.chapter02;
 
 /*
+File类判断文件/文件夹方法
     public boolean exists() :此File表示的文件或目录是否实际存在。
     public boolean isDirectory() :此File表示的是否为目录。
     public boolean isFile() :此File表示的是否为文件。
