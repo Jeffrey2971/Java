@@ -5,8 +5,7 @@ package Api01.Day09.chaptet07;
     共性的成员方法：
         void write(int c) 写入单个字符。
         void write(char[] cbuf) 写入字符数组。
-        abstract
-        void write(char[] cbuf, int off, int len) 写入字符数组的某一部分,off数组的开始索引,len写的字符个数。
+        abstract void write(char[] cbuf, int off, int len) 写入字符数组的某一部分,off数组的开始索引,len写的字符个数。
         void write(String str) 写入字符串。
         void write(String str, int off, int len) 写入字符串的某一部分,off字符串的开始索引,len写的字符个数。
         void flush() 刷新该流的缓冲。
