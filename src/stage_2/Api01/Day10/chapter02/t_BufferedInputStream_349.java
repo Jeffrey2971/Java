@@ -35,9 +35,16 @@ public class t_BufferedInputStream_349 {
         BufferedInputStream bis = new BufferedInputStream(fis);
         // 3、使用BufferedInputStream对象中的方法read，读取文件
         // int read() 从输入流中读取数据的下一个字节
-        int len = 0; // 记录每次读取到的字节
+        /*int len = 0; // 记录每次读取到的字节
         while ((len = bis.read())!=-1) {
             System.out.println(len);
+        }*/
+
+        // int read(byte[] b) 从输入流中读取一定数量的字节，并将其存储在缓冲区的数组b中
+        byte[] bytes = new byte[1024]; // 存储每次读取的数据
+        int len = 0; // 记录每次读取的有效字节个数
+        while ((len = bis.read(bytes)) != -1) {
+            System.out.println(new String(bytes,0,len));
         }
         // 4、释放资源
         fis.close();
