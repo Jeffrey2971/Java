@@ -29,9 +29,10 @@ package Api01.Day10.chapter05;
 import java.io.Serializable;
 
 public class t_Person_348 implements Serializable {
+    private static final long serialVersionUID = 42L;
     private String name;
-    //    private transient int age;
-    private int age;
+    // private transient int age;
+    public int age;
 
     @Override
     public String toString() {
