@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class t_InputStream_337 {
     public static void main(String[] args) throws IOException {
-        FileInputStream fis = new FileInputStream("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chaptet07/test.txt");
+        FileInputStream fis = new FileInputStream("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chaptet07/in.txt");
         int len = 0;
         while((len = fis.read()) !=-1){
             System.out.println((char)len);

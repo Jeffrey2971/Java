@@ -40,7 +40,7 @@ import java.io.IOException;
 public class t_OutputStream_331 {
     public static void main(String[] args) throws IOException {
         // 1、创建FileOutputStream对象，构造方法中传递写入数据的目的地
-        FileOutputStream fos = new FileOutputStream("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chapter04/test.txt");
+        FileOutputStream fos = new FileOutputStream("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chapter04/in.txt");
 
         // 2、调用FileOutputStream对象中的write方法，把数据写入到文件中
         //      public abstract void write(int b) :将指定的字节输出流。

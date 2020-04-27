@@ -34,7 +34,7 @@ public class t_File_322 {
         boolean b1 = f1.delete();
         System.out.println("b1" + b1);
 
-        File f2 = new File("test.txt");
+        File f2 = new File("in.txt");
         boolean b2 = f2.delete();
         System.out.println("b2" + b2);
     }
@@ -89,7 +89,7 @@ public class t_File_322 {
             3、createNewFile方法声明了抛出IOException，调用这个方法时必须处理这个异常，要么throw要么try-catch
      */
     private static void show01() throws IOException {
-        File f1 = new File("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chapter02/test.txt"); // 绝对路径
+        File f1 = new File("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chapter02/in.txt"); // 绝对路径
         boolean b1 = f1.createNewFile();
         System.out.println("b1" + b1);
 

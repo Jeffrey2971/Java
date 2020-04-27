@@ -37,13 +37,13 @@ public class t_Throws_271 {
 
     /*
         定义一个方法，对传递的文件路径进行合法性的判断
-        如果路径不是“/home/jeffrey/test.txt”，那么将抛出文件找不到的异常对象，告知方法的调用者
+        如果路径不是“/home/jeffrey/in.txt”，那么将抛出文件找不到的异常对象，告知方法的调用者
         注意：FileNotFoundException是编译异常，抛出了编译异常就必须处理这个异常
         可以使用throws继续声明抛出FileNotFoundException这个异常对象，让方法的调用者处理
      */
     public static void readFile(String fileName) throws IOException {
-        if (!fileName.equals("/home/jeffrey/test.txt")) {
-            throw new FileNotFoundException("传递的文件路径不是/home/jeffrey/test.txt");
+        if (!fileName.equals("/home/jeffrey/in.txt")) {
+            throw new FileNotFoundException("传递的文件路径不是/home/jeffrey/in.txt");
         }
 
         /*

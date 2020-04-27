@@ -25,7 +25,7 @@ import java.io.IOException;
 public class t_Exception_272 {
     public static void main(String[] args) {
         try{
-            readFile("/home/jeffrey/test.txt");
+            readFile("/home/jeffrey/in.txt");
         }catch(IOException e){ // try中抛出什么异常对象，catch就定义什么异常变量，用来接受这个异常对象
             // 常的处理逻辑，产生异常对象之后，怎么处理异常对象
             System.out.println("catch 传递的文件后缀名不是.txt");

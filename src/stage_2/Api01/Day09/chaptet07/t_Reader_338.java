@@ -32,7 +32,7 @@ import java.io.IOException;
 public class t_Reader_338 {
     public static void main(String[] args) throws IOException {
         // 1、创建一个FileReader对象，构造方法中绑定要读取的数据源
-        FileReader fr = new FileReader("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chaptet07/test.txt");
+        FileReader fr = new FileReader("/home/jeffrey/IdeaProjects/JavaLearn/src/stage_2/Api01/Day09/chaptet07/in.txt");
         // 2、使用FileReader对象中的方法read读取文件
         // int read() 读取单个字符并返回
         /*int len = 0;
