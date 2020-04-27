@@ -24,7 +24,7 @@ package Api01.Day10.chapter07;
 
     注意事项：
         如果使用继承自父类的write方法写数据，那么查看数据的时候会查询编码表 97->a
-        如果使用自己特有的方法print/println写数据，写的数据原样输出 97->a
+        如果使用自己特有的方法print/println写数据，写的数据原样输出，可打印任意类型的数据 97->a
 
  */
 
@@ -41,6 +41,11 @@ public class t_PrintStream_352 {
 
         // 如果使用自己特有的方法print/println写数据，写的数据原样输出 97->a
         ps.println(97);
+        ps.println(9.7);
+        ps.println('a');
+        ps.println("JEFFREY");
+        ps.println(true);
+
         // 释放资源
         ps.close();
     }
