@@ -20,14 +20,18 @@ package Api01.Day10.chapter05;
 
     transient关键字：瞬态关键字
         被transient修饰的成员变量，不能被序列化
+        private transient int age;
+        oos.writeObject(new t_Person_348("张雯蔚",20));
+        Object o = ois.readObject();
+        t_Person_348{name='张雯蔚', age=0}
  */
 
 import java.io.Serializable;
 
 public class t_Person_348 implements Serializable {
     private String name;
-    //    private static int age;
-    private transient int age;
+    //    private transient int age;
+    private int age;
 
     @Override
     public String toString() {
