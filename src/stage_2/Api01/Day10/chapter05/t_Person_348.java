@@ -8,13 +8,26 @@ package Api01.Day10.chapter05;
             有：可序列化和反序列化
             没有：NotSerializableException
     去市场卖肉-->肉上都有一个蓝色的章（检测合格）-->放心使用-->买回来怎么吃随意
+
+    static关键字：静态关键字
+        作用：静态优先与非静态优先于加载到内存中（静态优先于对象进入到内存中）
+        被static修饰的成员变量是不能被序列化的，序列化的都是对象
+
+        private static int age;
+        oos.writeObject(new t_Person_348("张雯蔚",20));
+        Object o = ois.readObject();
+        t_Person_348{name='张雯蔚', age=0}
+
+    transient关键字：瞬态关键字
+        被transient修饰的成员变量，不能被序列化
  */
 
 import java.io.Serializable;
 
 public class t_Person_348 implements Serializable {
     private String name;
-    private int age;
+    //    private static int age;
+    private transient int age;
 
     @Override
     public String toString() {

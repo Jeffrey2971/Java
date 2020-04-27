@@ -40,6 +40,8 @@ public class t_ObjectInputStream_349 {
         ois.close();
         // 4、使用读取出来的对象
         System.out.println(o);
+        t_Person_348 p = (t_Person_348)o;
+        System.out.println(p.getName() + p.getAge());
     }
 
 }
