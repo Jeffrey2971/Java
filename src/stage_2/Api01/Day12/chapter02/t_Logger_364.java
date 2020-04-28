@@ -29,6 +29,6 @@ public class t_Logger_364 {
         String msg_3 = "Python";
 
         // 调用showLog方法，传递日志级别和日志信息
-        showLog(1, msg_1 + msg_2 + msg_3);
+        showLog(2, msg_1 + msg_2 + msg_3);
     }
 }
