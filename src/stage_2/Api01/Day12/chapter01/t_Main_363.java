@@ -25,10 +25,10 @@ public class t_Main_363 {
 
         // 调用show方法，方法的参数是一个函数式接口，所以可以使用lambda表达式
         show(()->{
-            System.out.println("使用lambda表达式重写接口的愁绪爱你方法");
+            System.out.println("使用lambda表达式重写接口的抽象方法");
         });
 
         // 简化lambda表达式
-        show(()->System.out.println("使用lambda表达式重写接口的愁绪爱你方法"));
+        show(()->System.out.println("使用lambda表达式重写接口的抽象方法"));
     }
 }
