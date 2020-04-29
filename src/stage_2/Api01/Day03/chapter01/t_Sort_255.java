@@ -1,4 +1,4 @@
-package stage_2.Api01.Day03.chapter01;
+package Api01.Day03.chapter01;
 
 /*
 java.utils.Collections是集合工具类，用来对集合进行操作。部分方法如下：
@@ -40,10 +40,10 @@ public class t_Sort_255 {
         System.out.println(list2);
         System.out.println("-------------------------");
 
-        ArrayList<t_Person_256> list3 = new ArrayList<>();
-        list3.add(new t_Person_256("玮海琼", 20));
-        list3.add(new t_Person_256("张雯蔚", 18));
-        list3.add(new t_Person_256("陈禧", 25));
+        ArrayList<stage_2.Api01.Day03.chapter01.t_Person_256> list3 = new ArrayList<>();
+        list3.add(new stage_2.Api01.Day03.chapter01.t_Person_256("玮海琼", 20));
+        list3.add(new stage_2.Api01.Day03.chapter01.t_Person_256("张雯蔚", 18));
+        list3.add(new stage_2.Api01.Day03.chapter01.t_Person_256("陈禧", 25));
         System.out.println(list3); // [t_Person_256{name='玮海琼', age=20}, t_Person_256{name='张雯蔚', age=18}, t_Person_256{name='陈禧', age=25}]
         Collections.sort(list3);
         System.out.println(list3);

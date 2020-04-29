@@ -1,4 +1,4 @@
-package stage_2.Api01.Day03.chapter01;
+package Api01.Day03.chapter01;
 
 /*
 java.utils.Collections是集合工具类，用来对集合进行操作。部分方法如下：
@@ -37,14 +37,14 @@ public class t_Sort_257 {
 
         System.out.println("--------------------");
 
-        ArrayList<t_Student_258> list2 = new ArrayList<>();
-        list2.add(new t_Student_258("b玮海琼", 20));
-        list2.add(new t_Student_258("张雯蔚", 25));
-        list2.add(new t_Student_258("a陈禧", 20));
-        list2.add(new t_Student_258("雯雯", 21));
+        ArrayList<stage_2.Api01.Day03.chapter01.t_Student_258> list2 = new ArrayList<>();
+        list2.add(new stage_2.Api01.Day03.chapter01.t_Student_258("b玮海琼", 20));
+        list2.add(new stage_2.Api01.Day03.chapter01.t_Student_258("张雯蔚", 25));
+        list2.add(new stage_2.Api01.Day03.chapter01.t_Student_258("a陈禧", 20));
+        list2.add(new stage_2.Api01.Day03.chapter01.t_Student_258("雯雯", 21));
         System.out.println(list2);
 
-        Collections.sort(list2, new Comparator<t_Student_258>() {
+        Collections.sort(list2, new Comparator<stage_2.Api01.Day03.chapter01.t_Student_258>() {
 /*            @Override
             public int compare(t_Student_258 o1, t_Student_258 o2) {
                 // 按照年龄生序排序
@@ -55,7 +55,7 @@ public class t_Sort_257 {
             // 扩展
 
             @Override
-            public int compare(t_Student_258 o1, t_Student_258 o2) {
+            public int compare(stage_2.Api01.Day03.chapter01.t_Student_258 o1, stage_2.Api01.Day03.chapter01.t_Student_258 o2) {
                 System.out.println("-----------------------");
                 // 按照年龄生序排序
                 int result = o1.getAge() - o2.getAge();
