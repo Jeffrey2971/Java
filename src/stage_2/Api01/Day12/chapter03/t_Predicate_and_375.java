@@ -3,7 +3,6 @@ package Api01.Day12.chapter03;
 import java.util.function.Predicate;
 
 /*
-/*
     逻辑表达式：可以连接多个判断条件
     &&：与运算符，有false则false
     ||：或运算符，有true则true
@@ -33,19 +32,20 @@ public class t_Predicate_and_375 {
              两个条件必须同时满足
     */
     public static boolean checkString(String s, Predicate<String> pre1, Predicate<String> pre2) {
-        return pre1.test(s) && pre2.test(s);
+        // return pre1.test(s) && pre2.test(s);
+        return pre1.and(pre2).test(s);
     }
 
     public static void main(String[] args) {
         // 定义一个字符串
-        String s = "abcdefg";
+        String s = "jeffrey";
         // 调用checkString方法，参数传递两个lambda表达式
         boolean b = checkString(s, (String str) -> {
             // 判断字符串长度是否大于4
             return str.length() > 5;
         }, (String str) -> {
             // 判断字符串是否包含A
-            return str.contains("a");
+            return str.contains("e");
         });
         System.out.println(b);
 
