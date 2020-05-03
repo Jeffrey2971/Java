@@ -1,4 +1,4 @@
-package Day01.chapter01.Junit;
+package JavaWebLearn.Day01.chapter01.Junit;
 
 public class t_CalculatorTest_2 {
     public static void main(String[] args) {
@@ -10,5 +10,7 @@ public class t_CalculatorTest_2 {
 
         int result = c.sub(3, 2);
         System.out.println(result);
+
+        String str = "abc";
     }
 }

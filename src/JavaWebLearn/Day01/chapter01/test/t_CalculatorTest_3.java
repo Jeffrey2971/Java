@@ -1,6 +1,6 @@
-package Day01.chapter01.test;
+package JavaWebLearn.Day01.chapter01.test;
 
-import Day01.chapter01.Junit.t_Calculator_1;
+import JavaWebLearn.Day01.chapter01.Junit.t_Calculator_1;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
