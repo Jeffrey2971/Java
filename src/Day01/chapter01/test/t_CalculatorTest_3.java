@@ -21,4 +21,11 @@ public class t_CalculatorTest_3 {
         Assert.assertEquals(3, result);
 
     }
+
+    @Test
+    public void testSub(){
+        t_Calculator_1 c = new t_Calculator_1();
+        int result = c.sub(1, 2);
+        Assert.assertEquals(-1, result);
+    }
 }
