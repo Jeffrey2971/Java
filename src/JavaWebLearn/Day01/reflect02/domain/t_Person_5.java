@@ -4,11 +4,20 @@ public class t_Person_5 {
     private String name;
     private int age;
 
+    public String a;
+    protected String b;
+    String c;
+    private String d;
+
     @Override
     public String toString() {
         return "t_Person_5{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", a='" + a + '\'' +
+                ", b='" + b + '\'' +
+                ", c='" + c + '\'' +
+                ", d='" + d + '\'' +
                 '}';
     }
 
