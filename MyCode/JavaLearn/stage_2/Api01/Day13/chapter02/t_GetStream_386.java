@@ -10,7 +10,6 @@ package Api01.Day13.chapter02;
             参数是一个可变参数，所以可以传递一个数组
  */
 
-import java.util.*;
 import java.util.stream.Stream;
 
 public class t_GetStream_386 {

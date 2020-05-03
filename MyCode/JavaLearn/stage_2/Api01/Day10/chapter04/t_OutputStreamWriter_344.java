@@ -25,8 +25,6 @@ package Api01.Day10.chapter04;
         4、释放资源
  */
 
-import java.io.*;
-
 public class t_OutputStreamWriter_344 {
     public static void main(String[] args) throws IOException {
         write_utf_8();

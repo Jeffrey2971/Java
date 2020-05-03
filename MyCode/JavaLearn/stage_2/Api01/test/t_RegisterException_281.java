@@ -14,8 +14,6 @@ package Api01.test;
         如果循环结束了还没有找到重复的用户名，提示用户注册成功
  */
 
-import stage_2.Api01.test.Practice_Class.t_RegisterException_280;
-
 import java.util.Scanner;
 
 public class t_RegisterException_281 {

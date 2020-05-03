@@ -8,10 +8,6 @@ java.lang.Throwable类：是一个Java语言中所有错误或异常的超类。
 
  */
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class t_Exception_267 {
     public static void main(String[] args) /*throws ParseException*/ {
         // Exception：编译器异常，进行编译（敲代码）Java程序时出现的问题

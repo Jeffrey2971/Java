@@ -10,8 +10,6 @@ package Api01.Day10.chapter04;
         5、释放资源
  */
 
-import java.io.*;
-
 public class t_ReverseStream_346 {
     public static void main(String[] args) throws IOException {
         // 1、创建InputStreamReader对象，构造方法中传递字节输入流和指定的编码表名称GBK

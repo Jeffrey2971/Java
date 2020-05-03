@@ -1,8 +1,6 @@
 package cn.itcast.annotation;
 
-import java.io.InputStream;
 import java.lang.reflect.Method;
-import java.util.Properties;
 
 /**
  * 框架类

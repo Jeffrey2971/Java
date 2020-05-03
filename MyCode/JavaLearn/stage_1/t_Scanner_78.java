@@ -19,7 +19,7 @@ Scanner类的功能：可以实现键盘输入数据，到程序当中
  */
 
 
-import java.util.Scanner; // 1、导包
+import java.util.Scanner;
 
 public class t_Scanner_78 {
     public static void main(String[] args) {

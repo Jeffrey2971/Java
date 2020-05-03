@@ -1,7 +1,5 @@
 package cn.itcast.annotation;
 
-import java.lang.annotation.*;
-
 /**
 
  元注解：用于描述注解的注解

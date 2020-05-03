@@ -17,8 +17,6 @@ tips:
     1 < x && x < 3
  */
 
-import java.util.stream.StreamSupport;
-
 public class t_operator_14 {
     public static void main(String[] args) {
         // true && true -- > true

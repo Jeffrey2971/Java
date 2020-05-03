@@ -10,7 +10,6 @@ package Api01.Day10.chapter01;
         Properties集合是一个双列集合，key和value默认都是字符串
  */
 
-import java.io.*;
 import java.util.Properties;
 import java.util.Set;
 

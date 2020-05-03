@@ -18,8 +18,6 @@ package Api01.Day10.chapter03;
         使用数组缓冲读取多个字节效率高（132毫秒）
  */
 
-import java.io.*;
-
 public class t_CopyFile_337 {
     public static void main(String[] args) throws IOException {
         long s = System.currentTimeMillis();
