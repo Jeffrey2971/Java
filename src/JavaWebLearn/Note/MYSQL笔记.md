@@ -76,6 +76,92 @@
     - SQL全称：structured query language 表示结构化查询语言，定义了操作所有关系型数据库的规则
         - 每一种数据库操作方式都存在不一样的地方，称为“方言”，但整体大部分一致
         
+    - SQL通用语法：
+        - SQL语句可以单行或多行书写，以分号为结尾
+        - 可使用空格和缩进来增强语句的可读性
+        - MYSQL数据库的SQL语句不区分大小写，关键字建议使用大写
+        - 三种注释
+            - 单行注释：
+                - -- 注释内容
+                - # 注释内容（MYSQL特有）
+            - 多行注释：
+                - /* 注释内容 */
+                
+    - SQL分类：
+        - DML：增删改表中的数据
+        - DDL：操作数据库、表
+        - DQL：查询表中的数据
+        - DCL：数据库中授权设置
+    
+    
+        - Data Definition Language (DDL 数据定义语言) 如:建库,建表
+        - Data Manipulation Language(DML 数据操纵语言),如:对表中的记录操作增删改
+        - Data Query Language(DQL 数据查询语言),如:对表中的查询操作
+        - Data Control Language(DCL 数据控制语言),如:对用户权限的设置
         
-         
+            
+## DDL 操作数据库、表
+    - 操作数据库：CRUD
+        - C（Create）：创建
+            - 创建数据库
+                - create database 数据库名称
+            - 创建数据库且指定字符集
+                - create database 数据库名称 charset 指定的字符集编码
+            - 创建数据库并判断不存在，再创建
+                - create database if not exists 数据库名称
+            - 创建名为test数据库，判断是否存在且指定字符集为GBK
+                - CREATE DATABASE if not exists test charset utf8
+        - R（Retrieve）：查询
+            - 查询所有数据库的名称
+                - show databases;
+            - 查看某个数据库的字符集：查看某个数据库的创建语句
+                - show create database 数据库的名称;
+        - U（Update）：修改
+            - 修改数据库的字符集
+                - alter database 数据库名称 charset 字符集名称
+        - D (Delete)
+            - 删除数据库
+                - drop database 数据库名称;
+            - 先判断数据库存在，再删除
+                - drop database if exists 数据库名称;
+        - 使用数据库
+            - 查询当前正在使用的数据库名称
+                - select database();
+            - 使用数据库
+                - use 数据库名称;
+                
+    - 操作表
+        - C（Create）：创建
+            - 语法
+                - create table 表名(
+                    列名1 数据类型1,
+                    列名2 数据类型2,
+                    ... ...
+                    列名n 数据类型3
+                );
+                    - 注意：最后一列数据不需要添加逗号
+                    
+            - 数据库类型
+                - int(integer)：整数类型
+                    - age int,
+                - double：小数类型
+                    - score double(5,2)
+                - date：日期类型，只包含年月日的日期
+                    - yyyy-MM-dd
+                - datetime：日期，包含了年月日时分秒
+                    - yyyy--MM-dd HH:mm:ss
+                - timestamp：时间戳类型，包含了年月日时分秒
+                    - yyyy--MM-dd HH:mm:ss
+                    - 如果将来不给这个字段赋值，赋值为null，则默认使用当前的系统时间来自动赋值
+                    
+            
+        - R（Retrieve）：查询
+            - 查询某个数据库中所有表的名称
+                - show tables;
+            - 查询表结构
+                - desc 表名称;
+        - U（Update）：修改
+        - D (Delete)：删除
+        
+    - 
         
