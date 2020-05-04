@@ -20,6 +20,7 @@ public class t_Anno1_12 {
         // 有缺陷
     }
 
+
     public void show2(){
         // 替代shou1方法
     }
