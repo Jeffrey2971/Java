@@ -1,6 +1,6 @@
-package JavaWebLearn.Day01.reflect02;
+package JavaWebLearn.Day01.chapter02.reflect02;
 
-import JavaWebLearn.Day01.reflect02.domain.t_Person_5;
+import JavaWebLearn.Day01.chapter02.reflect02.domain.t_Person_5;
 
 import java.lang.reflect.Method;
 
@@ -44,7 +44,16 @@ public class t_Reflect_9 {
         Method[] methods = personClass.getMethods();
         for (Method method : methods) {
             System.out.println(method);
+            String name = method.getName();
+            System.out.println("--------");
+            System.out.println(name);
+            // method.setAccessible(true);
         }
+
+        System.out.println("--------------------");
+        // 获取类名
+        String className = personClass.getName();
+        System.out.println(className);
 
 
     }

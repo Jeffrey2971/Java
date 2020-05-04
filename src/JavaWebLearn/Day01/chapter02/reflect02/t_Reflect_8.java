@@ -1,6 +1,6 @@
-package JavaWebLearn.Day01.reflect02;
+package JavaWebLearn.Day01.chapter02.reflect02;
 
-import JavaWebLearn.Day01.reflect02.domain.t_Person_5;
+import JavaWebLearn.Day01.chapter02.reflect02.domain.t_Person_5;
 
 import java.lang.reflect.Constructor;
 

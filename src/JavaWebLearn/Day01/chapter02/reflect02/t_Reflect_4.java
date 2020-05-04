@@ -1,7 +1,7 @@
-package JavaWebLearn.Day01.reflect02;
+package JavaWebLearn.Day01.chapter02.reflect02;
 
-import JavaWebLearn.Day01.reflect02.domain.t_Person_5;
-import JavaWebLearn.Day01.reflect02.domain.t_Student_6;
+import JavaWebLearn.Day01.chapter02.reflect02.domain.t_Person_5;
+import JavaWebLearn.Day01.chapter02.reflect02.domain.t_Student_6;
 
 public class t_Reflect_4 {
     /*
@@ -12,7 +12,7 @@ public class t_Reflect_4 {
      */
     public static void main(String[] args) throws ClassNotFoundException {
         // 1、Class.forName("全类名")：将字节码文件加载进内存，返回Class对象
-        Class<?> cls1 = Class.forName("JavaWebLearn.Day01.reflect02.domain.t_Person_5");
+        Class<?> cls1 = Class.forName("JavaWebLearn.Day01.chapter02.reflect02.domain.t_Person_5");
         System.out.println(cls1);
 
         // 2、类名.class：通过类名的属性class获取

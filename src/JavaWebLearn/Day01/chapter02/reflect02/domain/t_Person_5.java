@@ -1,4 +1,4 @@
-package JavaWebLearn.Day01.reflect02.domain;
+package JavaWebLearn.Day01.chapter02.reflect02.domain;
 
 public class t_Person_5 {
     private String name;
