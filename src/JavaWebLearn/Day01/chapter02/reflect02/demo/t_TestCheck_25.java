@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  * 当主方法执行后，会自动被检测的所有方法（加上@check注解的方法），判断方法是否有异常，记录到文件中
  */
 
-public class t_TestCheck_25{
+public class t_TestCheck_25 {
     public static void main(String[] args) throws IOException {
         // 1、创建计算器对象
         t_Calculator_23 c = new t_Calculator_23();
@@ -28,9 +28,9 @@ public class t_TestCheck_25{
                 // 5、有：执行方法
                 try {
                     method.invoke(c);
-                }catch (Exception e){
+                } catch (Exception e) {
                     // 6、捕获异常，记录到文件中
-                    number ++;
+                    number++;
                     bw.write(method.getName() + "方法出异常了");
                     bw.newLine();
                     bw.write("异常的名称：" + e.getCause().getClass().getSimpleName());
@@ -48,7 +48,5 @@ public class t_TestCheck_25{
         bw.flush();
         bw.close();
 
-
-        // 6、捕获异常
     }
 }
