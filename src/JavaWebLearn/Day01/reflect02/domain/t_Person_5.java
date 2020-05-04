@@ -42,6 +42,14 @@ public class t_Person_5 {
         this.age = age;
     }
 
+    public void eat(){
+        System.out.println("eat...");
+    }
+
+    public void eat(String food){
+        System.out.println("eat" + food);
+    }
+
     public t_Person_5() {
     }
 }

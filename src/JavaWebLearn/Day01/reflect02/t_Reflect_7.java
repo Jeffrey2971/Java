@@ -4,7 +4,7 @@ import JavaWebLearn.Day01.reflect02.domain.t_Person_5;
 
 import java.lang.reflect.Field;
 
-public class t_reflect_7 {
+public class t_Reflect_7 {
     /*
     ## Class对象功能：
     - 获取的功能：
