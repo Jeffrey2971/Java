@@ -36,6 +36,20 @@
     
     - 打开关闭服务
         - /etc/init.d/mysql start/stop
+        
+    - 登入方式
+        - mysql -u账户 -p密码
+        - mysql -hIP地址 -uroot -p连接目标的密码
+        -  mysql --host=IP地址 --user=root --password=连接目标密码
+    
+    - 设置本机MYSQL可以被局域网所访问
+        - mysql -uroot -p root
+        - mysql->use mysql
+        - mysql->update user set host = '%' where user ='root';
+        - mysql->grant all privileges on *.* to 'root'@'%' with grant option;
+        - mysql->flush privileges;
+        - mysql->exit;
+        - sudo /etc/init.d/mysql restart
     
 
     - 其它文件默认位置
@@ -47,5 +61,21 @@
         - /usr/lib/mysql            库  
         - /usr/share/mysql          错误消息和字符集文件  
         - /usr/share/sql-bench      基准程序  
+        
+    
+    - MYSQL目录结构
+        - MYSQL安装目录
+            - 配置文件：/etc/my.cnf
+        - MYSQL数据目录
+            - 几个概念
+                - 数据库：文件夹
+                - 数据：文件
+                - 表：文件里存储的数据
+                
+# SQL
+    - SQL全称：structured query language 表示结构化查询语言，定义了操作所有关系型数据库的规则
+        - 每一种数据库操作方式都存在不一样的地方，称为“方言”，但整体大部分一致
+        
+        
          
         
