@@ -153,8 +153,24 @@
                 - timestamp：时间戳类型，包含了年月日时分秒
                     - yyyy--MM-dd HH:mm:ss
                     - 如果将来不给这个字段赋值，赋值为null，则默认使用当前的系统时间来自动赋值
+                - varchar：字符串类型
+                    - name varchar(20)
+                    - 表示了姓名最大20个字符
+                    - 例如：zhangsan 八个字符，张三 两个字符，如果超出了指定的长度则会报错
+            - 创建表
+                - create table student(
+                    id int,
+                    name varchar(32),
+                    age int,
+                    score double(4,1),
+                    birthday date,
+                    insertTime timestamp
+                );
+                
+            - 备份（复制）表
+                - create table 新表名 like 原表名; 
+                
                     
-            
         - R（Retrieve）：查询
             - 查询某个数据库中所有表的名称
                 - show tables;
@@ -162,6 +178,10 @@
                 - desc 表名称;
         - U（Update）：修改
         - D (Delete)：删除
+            - 删除表
+                - drop table 表名称;
+            - 判断表存在，再删除
+                - drop table if exists 表名称;
         
     - 
         
