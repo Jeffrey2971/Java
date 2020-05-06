@@ -263,3 +263,100 @@
                         - 表达式2：如果该字段为null后的替换值
             - 起别名
                 - as关键字（可省略）
+        
+        - 条件查询
+            - where 字句后面跟条件
+            - 运算符
+                - > < <= >= = <> 
+                - BETWEEN..AND
+                - IN(集合)   
+                - LIKE：模糊查询
+                    - 占位符
+                        - _ 表示了单个任意字符
+                        - % 表示任意多个字符
+                - IFNULL
+                - AND 或 &&
+                - or 或 ||
+                - not 或 ！
+                
+
+    
+### test
+    CREATE TABLE student (
+    id int,
+    -- 编号
+    name varchar(20), -- 姓名
+    age int, -- 年龄
+    sex varchar(5),
+    -- 性别
+    address varchar(100),
+    -- 地址
+    math int, -- 数学
+    english int -- 英语
+    );
+    INSERT INTO student(id,NAME,age,sex,address,math,english) VALUES (1,'马云',55,'男','杭州',66,78),(2,'马化腾',45,'女','深圳',98,87),(3,'马景涛',55,'男','香港',56,77),(4,'柳岩',20,'女','湖南',76,65),(5,'柳青',20,'男','湖南',86,NULL),(6,'刘德华',57,'男','香港',99,99),(7,'马德',22,'女','香港',99,99),(8,'德玛西亚',18,'男','南京',56,65);
+    
+    
+    select * from student;
+    
+    
+    
+    -- 查询 姓名和年龄
+    select 
+            name, -- 姓名
+            age -- 年龄
+    from 
+            student; -- 学生表
+    
+    select address from student;
+    
+    -- 去除重复的结果集
+    select distinct address from student;
+    select DISTINCT name, address from student;
+    
+    -- 计算math和English分数之和
+    
+    select name,math,english, math+english from student;
+    -- 不合理，如果有null参与的运算，计算结果都为null
+    select name,math,english, math+ifnull(english, 0) from student;
+    
+    -- 起别名
+    select name as 姓名,math as 数学,english as 英语, math+ifnull(english, 0) as 总分 from student;
+    
+    select * from student;
+    
+    -- 查询年龄大于20岁
+    SELECT * from student where age > 20;
+    SELECT * from student where age >= 20;
+    SELECT * from student where age < 20;
+    SELECT * from student where age <= 20;
+    SELECT * from student where age = 20;
+    
+    -- 查询年龄不等于于20岁
+    SELECT * from student where age != 20;
+    SELECT * from student where age <> 20;
+    
+    -- 查询年龄大于等于20小于等于30
+    SELECT * from student WHERE age >= 20 and age <= 30;
+    SELECT * from student WHERE age BETWEEN 20 and 30;
+    
+    -- 查询年龄为20岁19岁25岁的信息
+    select * from student where age = 18 or age = 20 or age = 22;
+    SELECT * from student where age IN (22,20,18);
+    
+    -- 查询英语成绩为null
+    -- SELECT * from student where english = null; -- 错误写法，null值不能使用=或！=判断
+    SELECT * from student where english is null;
+    SELECT * from student where english is not null;
+    
+    -- 查询班级姓马的有哪些
+    select * from student where name LIKE '马%';
+    
+    -- 查询第二个字是化的人
+    select * from student where name LIKE "_化%";
+    
+    -- 查询姓名是三个字的人
+    select * from student where name LIKE '___';
+    
+    -- 查询姓名中包含马的人
+    select * from student where name LIKE '%德%'
