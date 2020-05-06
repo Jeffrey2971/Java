@@ -170,18 +170,96 @@
             - 备份（复制）表
                 - create table 新表名 like 原表名; 
                 
-                    
+                   
         - R（Retrieve）：查询
             - 查询某个数据库中所有表的名称
                 - show tables;
             - 查询表结构
                 - desc 表名称;
         - U（Update）：修改
+            - 修改表明
+                - alter table 表名 rename to 新表名;
+            - 修改表的字符集
+                - 首先查看表名
+                    - show create table 表名称;
+                - 修改字符集
+                    - alter table 表名称 charset 指定的字符集
+            - 添加一列
+                - alter table 表名称 add 列名 数据类型;
+            
+            - 修改列的名及类型
+                - alter table 表名 change 列名 新列名 新数据类型();
+                - alter table 表名 modify 列名 新数据类型();
+            - 删除列
+                - alter table 表名 drop 列名;
         - D (Delete)：删除
             - 删除表
                 - drop table 表名称;
             - 判断表存在，再删除
                 - drop table if exists 表名称;
         
-    - 
+
+    - 客户端图形化工具
+        - Nautica
         
+    - DML：增删改表中数据
+        - 添加数据
+            - 语法
+                - inster into 表名(列名1,列名2,...,列名n) value (值1,值2,...值n);
+            - 注意事项
+                - 列名和值要一一对应
+                - 如果表名后不定义列名则默认给所有列添加值(检化的书写格式)
+                    - inster into 表名 value (值1,值2,...值n);
+                - 除了数字类型，其他类型需要使用引号（单引号或双引号都可以）引起来
+                    
+        - 删除数据
+            - 语法
+                - delete from 表名 [where 条件];
+            - 注意事项
+                - 如果不加条件则删除表中所有记录
+                - 如果需要删除所有记录
+                    - delete from 表名; -- 不推荐使用，有多少条数据就会执行多少次删除操作
+                    - truncate table 表名; -- 推荐使用，效率更高，先删除表然后再创建一张一模一样的表
+        - 修改数据
+            - 语法
+                - update 表名 set 列名1 = 值1,列名2=值2,...[where 条件]
+            - 注意事项
+                - 如果不加任何条件则会将表中所有的记录全部修改
+                
+        
+    - DQL：查询表中的记录
+        - select * from 表名
+        
+        - 语法
+             select
+                字段列表
+             from
+                表明列表
+             where
+                条件列表
+             group by
+                分组字段
+             having
+                分组之后的条件
+             order by
+                排序
+             limit
+                分页限定
+        
+        - 基础查询
+            - 多个字段的查询
+                - sekect 字段名1,字段名2,...字段名n from  表名称;
+                - 注意事项：
+                    - 如果查询所有字段，则可以使用代替字段列表
+            - 去除重复
+                - distinct关键字
+                - 注意事项
+                    - 只有字段都相同才会去重
+            - 计算列
+                - 一般可以使用四则运算来计算列的值（一般只会进行数值型的计算）
+                - 注意事项
+                    - ifnull(表达式1，表达式2)：null参数的运算，结果都为null
+                        - 表达式1：那个字段需要判断是否为null
+                        - 表达式2：如果该字段为null后的替换值
+            - 起别名
+                - as关键字（可省略）
