@@ -81,8 +81,19 @@ INSERT INTO salarygrade(grade,losalary,hisalary) VALUES
 -- 需求：
 
 -- 1.查询所有员工信息。查询员工编号，员工姓名，工资，职务名称，职务描述
+/*
+    分析：
+        1、员工编号，员工姓名，工资，需要查询emp表，职务名称，职务描述，需要查询job表
+        2、查询的条件，emp.job_id = job.id
+ */
 
 -- 2.查询员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置
+/*
+    分袖
+        1、员工编号，员工姓名，工资，查询emp表，职务名称，职务描述，查询job表
+        2、emp.jpb_id = job.id and emp.dept_id = dept.id
+
+ */
    
 -- 3.查询员工姓名，工资，工资等级
 

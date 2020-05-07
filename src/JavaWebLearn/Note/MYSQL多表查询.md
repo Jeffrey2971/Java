@@ -112,7 +112,5 @@
                             - select * from dept t1,(select * from emp where emp.join_date > '2011-11-11') t2 where t1.id= t2.dept_id;
                         - 普通查询
                             - select * from emp t1,dept t2 where t1.dept_id = t2.id and t1.join_date > '2011-11-11';
-                        
-                
             
-                
+    - 多表查询练习                    
