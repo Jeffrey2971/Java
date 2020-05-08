@@ -300,6 +300,20 @@
             - 语法
                 - drop user '用户名'@'主机名';
         - 修改用户密码
+             - 语法
+                - set password for '用户名'@'主机名' = password('新密码');
+                - update password set 密码字段 = password('新密码') where user='用户名'
+                
+             - 在MYSQL中如果忘记了root用户密码
+                - 停止MYSQL服务
+                - 启动无验证方式启动MYSQL服务
+                    - mysqld --skip-grant-tables
+                - 打开新的终端直接输入mysql命令
+                - use mysql;
+                - 修改密码
+                - 关闭mysqld服务
+                - 启动MYSQL服务并使用新密码登录
+
         - 查询用户
             - 切换到MYSQL数据库
                 - use mysql;
@@ -307,5 +321,15 @@
                 - select * from user;
           
             - 通配符%：可以表示在任意主机使用用户登录数据库
-    - 授权
+    - 授权管理
+        - 查询权限
+            - show grants for '用户名'@'主机名';
+        - 授予权限
+            - grant 权限列表 on 数据库名.表名 to '用户名'@'主机名';
+            - 授予用户所有权限
+                - grant all on *.* to '用户名'@'主机名';
+
+
+        - 撤销权限
+        
         
