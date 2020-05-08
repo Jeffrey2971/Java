@@ -281,4 +281,31 @@
         -- 转账操作
         update account set balance = balance - 500 where id = 1;
         update account set balance = balance + 500 where id = 2;
+
+## DCL
+- SQL分类
+    - DDL：操作数据库和表
+    - DML：操作增删改表中的数据
+    - DQL：查询表中的数据
+    - DCL：管理用户，授权
+
+- DBA：数据库管理员
+
+- DCL：管理用户，授权
+    - 管理用户
+        - 添加用户
+            - 语法
+                - create user '用户名'@'主机名' identified by '密码'
+        - 删除用户
+            - 语法
+                - drop user '用户名'@'主机名';
+        - 修改用户密码
+        - 查询用户
+            - 切换到MYSQL数据库
+                - use mysql;
+            - 查询user表
+                - select * from user;
+          
+            - 通配符%：可以表示在任意主机使用用户登录数据库
+    - 授权
         
