@@ -85,20 +85,91 @@ INSERT INTO salarygrade(grade,losalary,hisalary) VALUES
     分析：
         1、员工编号，员工姓名，工资，需要查询emp表，职务名称，职务描述，需要查询job表
         2、查询的条件，emp.job_id = job.id
+    实现：
+    select t1.id,         -- 员工编号
+       t1.ename,      -- 员工姓名
+       t1.salary,     -- 工资
+       t2.jname,      -- 职务
+       t2.description -- 职务描述
+       from emp t1,
+       job t2
+       where t1.job_id = t2.id;
  */
 
 -- 2.查询员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置
 /*
-    分袖
+    分析
         1、员工编号，员工姓名，工资，查询emp表，职务名称，职务描述，查询job表
         2、emp.jpb_id = job.id and emp.dept_id = dept.id
+    实现：
+       select t1.id,          -- 员工编号
+       t1.ename,       -- 员工姓名
+       t1.salary,      -- 工资
+       t2.jname,       -- 职务
+       t2.description, -- 职务描述
+       t3.dname,
+       t3.loc
+       from emp t1,
+       job t2,
+       dept t3
+       where t1.job_id = t2.id
+       and t1.dept_id = t3.id
 
  */
    
 -- 3.查询员工姓名，工资，工资等级
+/*
+    分析
+        1、员工姓名和工资在emp表中查询，工资等级在salaryGrade表中查询
+        2、条件emp.salary >= salarygrade.losalary and emp.salary <= salary.hisalary
+              emp.salary.between salarygrade.losalary and salary.hisalary
+    实现：
+       select t1.ename,
+       t1.salary,
+       t2.grade
+       from emp t1,
+       alarygrade t2
+       where t1.salary >= t2.losalary
+       and t1.salary <= t2.hisalary;
+ */
+
 
 -- 4.查询员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级
+/*
+    分析
+        1、员工姓名，工资，查询emp表，职务名称，职务描述，查询job表，部门名称，部门位置，查询dept表，查询salarygrade表
+        2、条件：emp.jpb_id = job.id and emp.dept_id = dept.id and emp.salary >= salarygrade.losalary and emp.salary <= salary.hisalary
+    实现：
+       select
+       t1.ename,
+       t1.salary,
+       t2.jname,
+       t2.description,
+       t3.dname,
+       t3.loc,
+       t4.grade
+       from emp t1,
+       job t2,
+       dept t3,
+       salarygrade t4
+       where t1.job_id = t2.id -- 员工和职位
+       and t1.dept_id = t3.id -- 员工和部门
+       and t1.salary between t4.losalary and t4.hisalary;
+
+ */
 
 -- 5.查询出部门编号、部门名称、部门位置、部门人数
+/*
+    分析
+        1、部门编号、部门名称、部门位置，查询dept表，部门人数，查询员工表的
+        2、使用分组查询，按照emp.dept_id完成分组，查询count(id)
+        3、使用子查询将第二步的查询结果和dept表进行关联查询
+ */
  
 -- 6.查询所有员工的姓名及其直接上级的姓名,没有领导的员工也需要查询
+/*
+    分析
+        1、查询员工姓名，查询emp，直接上级的姓名，查询emp，emp表的id和mgr自关联
+        2、条件emp.id = emp.mgr;
+        3、查询左表的所有数据和交际数据，使用左外连接查询
+ */

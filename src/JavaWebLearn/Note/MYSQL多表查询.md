@@ -113,4 +113,79 @@
                         - 普通查询
                             - select * from emp t1,dept t2 where t1.dept_id = t2.id and t1.join_date > '2011-11-11';
             
-    - 多表查询练习                    
+    - 多表查询练习
+        select t1.id,         -- 员工编号
+               t1.ename,      -- 员工姓名
+               t1.salary,     -- 工资
+               t2.jname,      -- 职务
+               t2.description -- 职务描述
+        from emp t1,
+             job t2
+        where t1.job_id = t2.id;
+        
+        -- ----------------------------------
+        select t1.id,          -- 员工编号
+               t1.ename,       -- 员工姓名
+               t1.salary,      -- 工资
+               t2.jname,       -- 职务
+               t2.description, -- 职务描述
+               t3.dname,
+               t3.loc
+        from emp t1,
+             job t2,
+             dept t3
+        where t1.job_id = t2.id
+          and t1.dept_id = t3.id;
+        -- ---------------------------------
+        select t1.ename,
+               t1.salary,
+               t2.grade
+        from emp t1,
+             salarygrade t2
+        where t1.salary >= t2.losalary
+          and t1.salary <= t2.hisalary;
+        -- ---------------------------------查询员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级
+        select t1.ename,
+               t1.salary,
+               t2.jname,
+               t2.description,
+               t3.dname,
+               t3.loc,
+               t4.grade
+        from emp t1,
+             job t2,
+             dept t3,
+             salarygrade t4
+        where t1.job_id = t2.id  -- 员工和职位
+          and t1.dept_id = t3.id -- 员工和部门
+          and t1.salary between t4.losalary and t4.hisalary;
+        -- --------------------------
+        select t1.id,
+               t1.dname,
+               t1.loc,
+               t2.tota
+        from dept t1,
+             (select dept_id,
+                     count(id) as tota
+              from emp
+              group by dept_id) t2
+        where t1.id = t2.dept_id;
+        -- ------------------------
+        select
+        t1.ename,
+        t1.mgr,
+        t2.id,
+               t2.ename
+        from emp t1
+        left join emp t2
+        on t1.mgr = t2.id
+        
+
+## 事务
+- 事务基本介绍
+    - 概念
+        - 如果一个包含多个步骤的业务操作，被事务管理，那么这些操作，要么同时成功，要么同时失败
+
+- 事务的四大特征
+- 事务的隔离级别                    
+
