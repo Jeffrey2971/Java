@@ -72,7 +72,8 @@
             - account表 修改记录
             - account表 删除一条记录 
             
-    - ResultSet：结果集对象
+    - ResultSet：结果集对象，封装查询结果
+    
     - PrepareStatement：执行SQL对象
 
     
