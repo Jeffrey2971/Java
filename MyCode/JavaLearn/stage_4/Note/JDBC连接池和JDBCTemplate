@@ -22,6 +22,7 @@
 - D3P0：使用步骤
     - 步骤
         - 导入两个jar包 c3p0-0.9.5.2.jar 和 依赖jar包 mchange-commons-java-0.2.12.jar
+            - 注意需导入数据库驱动jar包
         - 定义配置文件：
             - 名称：c3p0.properties 或者 c3p0-config.xml
             - 路径：直接将文件放在src目录下即可
