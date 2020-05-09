@@ -35,7 +35,7 @@ public class jdbcTest11 {
             // 5、执行SQL语句
             pstmt1.executeUpdate();
             // 手动制造异常
-            int i = 3 / 0;
+            // int i = 3 / 0;
             pstmt2.executeUpdate();
             // 提交事务
             conn.commit();
