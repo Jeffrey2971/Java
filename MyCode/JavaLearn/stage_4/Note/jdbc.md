@@ -73,7 +73,23 @@
             - account表 删除一条记录 
             
     - ResultSet：结果集对象，封装查询结果
-    
+        - boolean next()：游标向下移动一行，判断当前行是否是最后一行，有返回true，没有则返回false
+        - getXxx(参数)：获取数据
+            - Xxx：代表数据类型，如 int GetInt() String getString()
+            - 参数
+                - int：代表的是列的编号，从1开始。如：getString(1)
+                - String：代表的是列的名称。如：getDouble("balance")
+        - 注意事项：
+            - 使用步骤
+                - 游标向下移动一行
+                - 判断是否有数据
+                - 获取数据
+        - 练习
+            - 定义一个方法，查询emp表的数据，将其封装为对象，然后装载集合返回，
+                - 定义一个emp类
+                - 定义方法 public List<Emp> findAll(){}
+                - 实现方法 select * from emp;
     - PrepareStatement：执行SQL对象
+    
 
     
