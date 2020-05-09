@@ -1,4 +1,4 @@
-/*
+package JDBC.jdbc;/*
     jdbc快速入门
  */
 

@@ -1,10 +1,10 @@
-/**
+package JDBC.jdbc; /**
  * 执行ddl语句
  */
 
 import java.sql.*;
 
-public class jdbcTest6 {
+public class jdbcTest7 {
 
 
     public static void main(String[] args) {
@@ -23,21 +23,15 @@ public class jdbcTest6 {
             // 执行SQL
             rs = stmp.executeQuery(sql);
             // 处理结果
-            // 让游标向下移动一行
-            rs.next();
-            // 获取数据
-            int id = rs.getInt(1);
-            String name = rs.getString("name");
-            double balance = rs.getDouble(3);
-            System.out.println(id + "---" + name + "---" + balance);
-            // 让游标向下移动一行
-            rs.next();
-            // 获取数据
-            int id2 = rs.getInt(1);
-            String name2 = rs.getString("name");
-            double balance2 = rs.getDouble(3);
-            System.out.println(id2 + "---" + name2 + "---" + balance2);
+            while(rs.next()){
+                // 循环判断游标是否是末尾行
+                    // 获取数据
+                int id = rs.getInt(1);
+                String name = rs.getString("name");
+                double balance = rs.getDouble(3);
+                System.out.println(id + "---" + name + "---" + balance);
 
+            }
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

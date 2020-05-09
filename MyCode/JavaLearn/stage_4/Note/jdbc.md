@@ -14,7 +14,6 @@
             - 复制mysql-connector-java-8.0.20.jar到项目的libs目录下
             - Add as library
         - 注册驱动
-            - 
         - 获取数据库的连接对象connection
         - 定义sql
         - 获取执行sql语句的对象Statement
@@ -89,7 +88,72 @@
                 - 定义一个emp类
                 - 定义方法 public List<Emp> findAll(){}
                 - 实现方法 select * from emp;
+                
     - PrepareStatement：执行SQL对象
+        - SQL注入问题：在拼接SQL时，有一些SQL的特殊关键字参与字符串的拼接，会造成安全问题
+            - 随便输入用户名，输入密码：a' or 'a' = 'a
+            - sql：select * from user where username = 'asdjaksjd'and password = 'a''
+        - 解决SQL注入问题：使用PreparedStatement对象来解决
+        - 预编译的SQL，参数使用?作为占位符
+        - 步骤
+            - 导入驱动jar包 mysql-connector-java-8.0.20.jar
+                    - 复制mysql-connector-java-8.0.20.jar到项目的libs目录下
+                    - Add as library
+            - 注册驱动
+            - 获取数据库的连接对象connection
+            - 定义sql
+                - 注意：SQL的参数使用?作为占位符，如：select * from user where username = ? and password = ?
+            - 获取执行sql语句的对象PreparedStatement Connection.preparedStatement(String sql)
+            - 给?赋值
+                - 方法
+                    - setXxx(参数1,参数2)
+                        - 参数1：？的位置编号 从1开始
+                        - 参数2：？的值
+            - 执行SQL，接收返回的结果，不需要传递SQL
+            - 处理结果
+            - 释放资源
+        - 注意事项：后期都会使用preparedStatement来完成增删改查的所有操作
+            - 可以防止SQL注入
+            - 效率更高
     
-
+## 抽取JDBC工具类：JDBCUtils
+    - 目的：简化书写
+    - 分析
+        - 抽取注册驱动
+        - 抽取一个方法获取连接对象
+            - 需求：不传递参数，并保证工具类的通用性
+            - 解决方案：配置文件
+                - jdbc.properties
+                    - url = 
+                    - user = 
+                    - password
+        - 抽取一个方法释放资源
+        
+    - 练习
+        - 需求：
+            - 通过键盘录入用户名和密码
+            - 判断用户是否登录成功
+                - select * from user where username = "" and password = "";
+                - 如果这个SQL有查询结果则成功，反之则失败
+                
+        
+        - 步骤
+            - 创建一个数据库表 user
+                create table user(
+                    id int primary key auto_increment,
+                    username varchar(32),
+                    password varchar(32)
+                );
+            
+            - 创建
     
+## JDBC控制事务：
+- 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务所管理，则这多个步骤要么同时成功，要么同时失败
+- 操作：
+    - 开启事务
+    - 提交事务
+    - 回滚事务
+- 使用的是Connection对象管理事务
+    - 开启事务：setAutoCommit(boolean autoCommit)：调用该方法设置参数为false，即开启事务
+    - 提交事务：Commit()
+    - 回滚事务：rollback()
