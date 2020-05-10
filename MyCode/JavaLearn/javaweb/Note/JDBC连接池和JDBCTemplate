@@ -28,7 +28,39 @@
             - 路径：直接将文件放在src目录下即可
         - 创建核心对象 数据库连接池对象 ComboPooledDataSource
         - 获取连接：getConnection
-        - 
-       
-        
+
+- Druid：数据库连接池实现技术，由阿里巴巴提供
+    - 步骤
+        - 导入jar包 druid-1.0.9.jar
+        - 定义配置文件
+            - Properties形式
+            - 可以叫任意名称，可放在任意的目录下
+            - 需手动加载
+        - 加载配置文件
+            - Properties
+        - 获取数据库连接池对象
+            - 通过一个工厂类来获取：DruidDataSourceFactory
+        - 获取连接
+            - getConnection
+    - 定义工具类
+        - 定义一个类 jdbcUtils
+        - 提供静态代码块加载配置文件，初始化连接池对象
+        - 提供方法
+            - 获取连接方法：通过数据库连接池获取连接
+            - 释放资源
+            - 获取连接池方法
+            
+##
 - Spring JDBC：JDBC Template
+    - Spring框架对JDBC简单封装，提供了JDBCTemplate对象来简化JDBC的开发
+    - 步骤
+        - 导入jar包
+        - 创建JDBCTemplate对象，依赖于数据源DataSource
+            - JDBCTemplate template = new JdbcTemplate(ds);
+            
+        - 调用JDBCTemplate的方法来完成CRUD
+            - update()：执行DML语句，增删改语句
+            - queryForMap()：查询结果将结果集封装为map集合
+            - queryForList()：查询结果将结果集封装为list集合
+            - queryForObject()：查询结果，将结果封装为对象
+            - query()：查询结果，将结果封装为JavaBean对象
