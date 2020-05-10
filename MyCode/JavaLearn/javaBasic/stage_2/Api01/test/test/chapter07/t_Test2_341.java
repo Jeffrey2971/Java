@@ -31,7 +31,7 @@ public class t_Test2_341 {
         }
         for (String key : map.keySet()) {
             String value = map.get(key);
-            line = key + "." + value;
+            line = key + "MyCode/JavaLearn/stage_4/libs" + value;
             bw.flush();
             bw.write(line + "\n");
         }

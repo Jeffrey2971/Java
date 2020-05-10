@@ -56,7 +56,7 @@ public class t_Test_340 {
         for(String key : map.keySet()){
             String value = map.get(key);
             //8.把每一个键值对,拼接为一个文本行
-            line = key + "." + value;
+            line = key + "MyCode/JavaLearn/stage_4/libs" + value;
             //9.把拼接好的文本,使用字符缓冲输出流中的方法write,写入到文件中
             bw.write(line);
             bw.newLine();//写换行
