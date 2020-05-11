@@ -61,6 +61,22 @@
         - 调用JDBCTemplate的方法来完成CRUD
             - update()：执行DML语句，增删改语句
             - queryForMap()：查询结果将结果集封装为map集合
+                - 注意事项：这个方法查询的结果集长度只能是1，将列名作为key，将值座位value，这条记录会封装到map集合
             - queryForList()：查询结果将结果集封装为list集合
+                - 注意事项：将每一条记录封装为一个Map集合后再将多个Map集合装载到List集合中
             - queryForObject()：查询结果，将结果封装为对象
+                - 一般用于聚合函数的查询
             - query()：查询结果，将结果封装为JavaBean对象
+                - query的参数：RowMapper
+                                - 一般使用BeanPropertyMapper实现类，可以完成数据到JavaBean的自动封装
+                                - new BeanPropertyRowMapper<类型>(类型.class)
+    - 练习
+        - 需求：更改emp表
+            - 修改1号数据的salary的工资为10000
+            - 添加一条记录
+            - 删除刚才添加的记录
+            - 查询id为1的记录，将其封装为Map集合
+            - 查询所有的记录，将其封装为List集合
+            - 查询所有的记录，将其封装为Emp对象的List集合
+            - 查询总的记录数
+            

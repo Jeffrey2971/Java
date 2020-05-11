@@ -1,6 +1,6 @@
 package dataSource.druid;
 
-import dataSource.utils.jdbcDruidUtils;
+import utils.jdbcDruidUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
