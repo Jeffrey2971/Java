@@ -175,4 +175,14 @@
         - 盒子模型
             - 控制布局
                 - 属性
-        - 
+                    - margin：外边距
+                    
+                    - padding：内边距
+                        - 默认情况,下内边距会影响整个盒子的大小
+                        - box-sizing: border-box 设置盒子的属性，让width和height就是最终盒子的大小
+                    
+                    - float：浮动
+                        - left
+                        - Wright
+        
+## 
