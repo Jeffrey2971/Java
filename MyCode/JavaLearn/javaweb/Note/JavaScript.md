@@ -92,6 +92,15 @@
                     - 不用：定义的变量是全局变量(不建议)
         
     - 基本对象
+        - Function：函数对象
+        - Array
+        - Boolean
+        - Date
+        - Math
+        - Number
+        - String
+        - RegExp
+        - Global
     
 
 - BOM
