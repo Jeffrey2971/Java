@@ -156,7 +156,21 @@
             
         - Global
             - 特点：全局对象，global中封装的方法不需要对象就可以直接调用。 方法名()
-    
+            - 方法：
+                - encodeURI()：url编码
+                - decodeURI()：url解码
+
+                - encodeURIComponent：url编码，编码的字符更多
+                - decodeURIComponent：url解码
+
+                - parseInt()：将字符串转为数字
+                    - 逐一判断为一个字符是否是数字，直到不是数字位置，将前面数字部分转为number
+
+                - isNaN()：判断一个值是否为NaN
+                    - NaN六亲不认，包括自己不认，NaN参与的==比较全部访问false
+
+                - eval()：将JavaScript字符串，并把它作为脚本代码来执行
+                
 
 - BOM
 
