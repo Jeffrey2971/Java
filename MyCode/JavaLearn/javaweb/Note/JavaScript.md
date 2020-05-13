@@ -73,9 +73,23 @@
                         var a = 3; var b = 4;
                         var c = a > b ? 1:0;
                         alert(c)
-                
         
         - 流程控制语句
+            - if...else...
+            - switch
+                - 在Java中switch语句可以接收的数据类型：byte int shor char 枚举(1.5) String(1.7)
+                    - switch(变量)
+                        - case 值：
+                - 在JS中，可以接收任何原始数据类型
+            - while
+            - do...while
+            - for
+        - JS特殊语法
+            - 语句以;结尾，如果一行只有一条语句则;可以省略(不建议)
+            - 变量的定义使用var关键字，也可以不使用
+                - 用和不用的区
+                    - 用：定义的变量是局部变量
+                    - 不用：定义的变量是全局变量(不建议)
         
     - 基本对象
     
