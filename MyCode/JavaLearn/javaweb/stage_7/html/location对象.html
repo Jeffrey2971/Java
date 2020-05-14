@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location对象</title>
+
+</head>
+<body>
+<input type="button" id="btn" value="刷新">
+<input type="button" id="learn" value="去百度">
+<script>
+    // reload方法，定义一个按钮，点击按钮刷新当前页面
+    // 1、获取按钮
+    var btn = document.getElementById("btn");
+    // 2、绑定单击事件
+    btn.onclick = function () {
+        // 3、刷新页面
+        location.reload();
+    }
+
+    // 获取href
+    var href = location.href;
+    /*alert(href)*/
+
+    // 点击按钮，访问百度www.baidu.com
+    var btn = document.getElementById("learn");
+    // 2、绑定单击事件
+    btn.onclick = function () {
+        // 3、访问百度www.baidu.com
+        location.href = "https://www.baidu.com";
+
+    }
+
+
+</script>
+</body>
+</html>
