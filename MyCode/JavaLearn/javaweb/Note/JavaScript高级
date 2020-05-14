@@ -31,3 +31,12 @@
 # BOM
 - 概念：Browser Object Model 浏览器对象模型
     - 将浏览器的各个组成部分封装成为对象
+- 组成
+    - window：窗口对象
+    - navigator：浏览器对象
+    - screen：显示器屏幕对象
+    - history：历史记录对象
+    - location：地址栏对象
+    
+- window对象
+    - 
