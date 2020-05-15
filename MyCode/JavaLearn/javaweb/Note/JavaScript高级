@@ -164,24 +164,33 @@
         - ondblclick：双击事件
     - 焦点事件
         - onblur：失去焦点
+            - 一般用于表单验证
         - onfocus：元素获得焦点
     - 加载事件：
         - onload：一张页面或一幅图像完成加载
     - 鼠标事件
+        - onmousedown：鼠标被按下
+            - 定义方法时，定义一个形参，接收event对象
+            - event对象的button属性可以获取鼠标哪个键被点击
+                - 0：左键
+                - 1：滚轮
+                - 2：右键
+        - onmouseup：鼠标按键被松开
         - onmousemove：鼠标被移动
         - onmouseout：鼠标从某元素移开
         - onmouseover：鼠标移动到某元素之上
-        - onmousedown：鼠标被按下
-        - onmouseup：鼠标按键被松开
     - 键盘事件
         - onkeydown：键盘某个被按下
+            -
         - onkeyup：某个键盘按键被松开
         - onkeypress：某个键盘按键被按下并松开
-    
+
     - 选中和改变
         - onchange：区域的内容被更改
         - onselect：文本被选中
-        
+
     - 表单事件
         - onsubmit：确认按钮被点击
+            - 可以阻止表单的提交
+                - 需return，如果返回false则阻止提交
         - onreset：重置按钮被点击
