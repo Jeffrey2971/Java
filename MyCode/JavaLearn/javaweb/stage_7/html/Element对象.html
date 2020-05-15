@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element对象</title>
+</head>
+<body>
+<a>点我！</a>
+<input type="button" value="设置属性" id="btnSet">
+<input type="button" value="删除属性" id="btnDel">
+
+<script>
+    // 获取btnSet并绑定点击事件
+    var btnSet = document.getElementById("btnSet");
+    btnSet.onclick = function () {
+        // 1、获取a标签
+        var ele = document.getElementsByTagName("a")[0];
+        ele.setAttribute("href", "https://www.baidu.com")
+    }
+
+    // 获取btnDel并绑定点击事件
+    var btnDel = document.getElementById("btnDel");
+    btnDel.onclick = function () {
+        var ele = document.getElementsByTagName("a")[0];
+
+        ele.removeAttribute("href");
+
+
+    }
+
+</script>
+</body>
+</html>
