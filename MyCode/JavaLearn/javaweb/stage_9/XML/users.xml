@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<user>
+    <user id="1">
+        <name>张雯蔚</name>
+        <age>19</age>
+        <gender>女</gender>
+    </user>
+
+    <user id='2'>
+        <name>玮海琼</name>
+        <age>20</age>
+        <gender>女</gender>
+    </user>
+
+
+</user>
