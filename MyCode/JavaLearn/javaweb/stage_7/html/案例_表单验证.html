@@ -124,12 +124,16 @@
                 // 调用用户名校验方法 checkUsername();
                 // 调用密码校验方法 checkPassword();
                 // return checkUsername() && checkPassword();
-                return checkUsername() && checkPassword();
+                return checkUsername() && checkPassword() && checkTel() && checkEmail() && checkName();
             }
 
-            // 给用户名和密码框分别绑定离焦事件
+            // 给对应的方法添加焦点事件
             document.getElementById("username").onblur = checkUsername;
             document.getElementById("password").onblur = checkPassword;
+            document.getElementById("tel").onblur = checkTel;
+            document.getElementById("email").onblur = checkEmail;
+            document.getElementById("name").onblur = checkName;
+
 
             // 校验用户名
             function checkUsername() {
@@ -171,6 +175,55 @@
                 return flag;
             }
 
+            // 验证手机号
+            function checkTel() {
+                var tel = document.getElementById("tel").value;
+                var s_tel = document.getElementById("s_tel");
+                if(tel.length == 11){
+                    s_tel.innerHTML = "<img src='img/gou.png' width='35' height='25'>";
+                    return true;
+                }else{
+                    s_tel.innerHTML = "请输入11位手机号"
+                    return false;
+                }
+
+            }
+
+            // 验证邮箱
+            function checkEmail() {
+                var email = document.getElementById("email").value;
+                var s_email = document.getElementById("s_email");
+                if(email == ""){
+                    s_email.innerHTML = "邮箱不能为空"
+                    return false;
+                }else{
+                    // 把剩下的判断扔给email属性完成
+                    s_email.innerHTML = ""
+                    return true;
+                }
+
+            }
+
+            // 验证姓名
+            function checkName() {
+                var name = document.getElementById("name").value;
+                var s_name = document.getElementById("s_name");
+                if(name == ""){
+                    s_name.innerHTML = "姓名不能为空"
+                    return false;
+                }else if(s_name.length < 2 || s_name.length > 8){
+                    s_name.innerHTML = "姓名格式有误";
+                    return false
+                }else{
+                    s_name.innerHTML = "<img src='img/gou.png' width='35' height='25'>";
+                    return true
+                }
+
+
+            }
+
+
+
 
         }
     </script>
@@ -209,23 +262,34 @@
 
                     <tr>
                         <td class="td_left"><label for="email">Email</label></td>
-                        <td class="td_right"><input type="email" name="email" id="email" placeholder="请输入邮箱"></td>
+                        <td class="td_right">
+                            <input type="email" name="email" id="email" placeholder="请输入邮箱">
+                            <span id="s_email" class="error"></span>
+
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="td_left"><label for="name">姓名</label></td>
-                        <td class="td_right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                        <td class="td_right">
+                            <input type="text" name="name" id="name" placeholder="请输入姓名">
+                            <span id="s_name" class="error"></span>
+
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="td_left"><label for="tel">手机号</label></td>
-                        <td class="td_right"><input type="text" name="tel" id="tel" placeholder="请输入手机号"></td>
+                        <td class="td_right">
+                            <input type="tel" name="tel" id="tel" placeholder="请输入手机号">
+                            <span id="s_tel" class="error"></span>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="td_left"><label>性别</label></td>
                         <td class="td_right">
-                            <input type="radio" name="gender" value="male"> 男
+                            <input type="radio" name="gender" value="male" checked> 男
                             <input type="radio" name="gender" value="female"> 女
                         </td>
                     </tr>
