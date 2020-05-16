@@ -155,27 +155,19 @@
                 return flag;
             }
 
-            // 校验密码
             function checkPassword() {
-                // 获取用户名
                 var password = document.getElementById("password").value;
-                // 定义增则表达式：限定6到12位数
                 var reg_password = /^\w{6,12}$/;
-                // 判断值是否符合表达式的规则
                 var flag = reg_password.test(password);
-                // 提示信息
                 var s_password = document.getElementById("s_password");
                 if (flag) {
-                    // 提示绿色勾勾
                     s_password.innerHTML = "<img src='img/gou.png' width='35' height='25'>"
                 } else {
-                    // 提示红色的用户名有误
                     s_password.innerHTML = "密码格式有误";
                 }
                 return flag;
             }
 
-            // 验证手机号
             function checkTel() {
                 var tel = document.getElementById("tel").value;
                 var s_tel = document.getElementById("s_tel");
@@ -189,7 +181,6 @@
 
             }
 
-            // 验证邮箱
             function checkEmail() {
                 var email = document.getElementById("email").value;
                 var s_email = document.getElementById("s_email");
@@ -204,14 +195,13 @@
 
             }
 
-            // 验证姓名
             function checkName() {
                 var name = document.getElementById("name").value;
                 var s_name = document.getElementById("s_name");
                 if(name == ""){
                     s_name.innerHTML = "姓名不能为空"
                     return false;
-                }else if(s_name.length < 2 || s_name.length > 8){
+                }else if(name.length < 2 || name.length > 8){
                     s_name.innerHTML = "姓名格式有误";
                     return false
                 }else{
