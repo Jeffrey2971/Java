@@ -111,6 +111,26 @@
                         
                 - 对象的使用
                     - Jsoup：工具类，可以解析HTML或XML文档，返回Document
+                        - parse：解析HTML或XML文档，返回Document
+                            - parse(File in,String charsetName)：解析HTML或XML文件
+                            - parse(String html)：解析XML或HTML字符串
+                            - parse(URL url, int timeoutMillis)：通过网络路径获取指定的HTML或XML的文档对象
                     - Document：文档对象，代表内存中DOM树
+                        - 获取Element对象
+                            - getElementById(String id)：根据ID属性值获取唯一的Element对象
+                            - getElementByTag(String tagName)：根据标签名称获取元素对象的集合
+                            - getElementByAttribute(String key)：根据属性名称获取元素对象集合
+                            - getElementByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合
                     - Element：元素Element对象的集合，可当做ArrayList<Element>来使用
                     - Element：元素对象
+                        - 获取子元素对象
+                              - getElementById(String id)：根据ID属性值获取唯一的Element对象
+                              - getElementByTag(String tagName)：根据标签名称获取元素对象的集合
+                              - getElementByAttribute(String key)：根据属性名称获取元素对象集合
+                              - getElementByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合 
+                        - 获取属性值
+                            - String attr(String key)：根据属性名称获取属性值
+                        - 获取文本内容
+                            - String text()：获取文本内容
+                            - String innerHTML()：获取标签体的所有内容(包括子标签的字符串内容)
+                    - Node：节点对象

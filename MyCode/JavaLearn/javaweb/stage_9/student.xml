@@ -2,7 +2,7 @@
 
  <students>
 	<student number="heima_0001">
-		<name>mable</name>
+		<name id="a">mable</name>
 		<age>23</age>
 		<sex>male</sex>
 	</student>
