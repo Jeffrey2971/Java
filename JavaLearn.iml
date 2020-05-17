@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/Code/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MyCode/JavaLearn/javaweb/stage_9" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -22,5 +23,6 @@
     <orderEntry type="library" name="mchange-commons-java-0.2.12" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.37-bin" level="project" />
     <orderEntry type="library" name="libs (2)" level="project" />
+    <orderEntry type="library" name="libs (3)" level="project" />
   </component>
 </module>
