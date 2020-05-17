@@ -34,13 +34,20 @@
 - JavaEE：JAVA语言在企业及开发中使用的技术规范的总和，一共规定了13项大的规范servlet/jsp，开源免费
 
 - Tomcat：Web服务器软件
-    - 下载：http://tomcat.apache.org/
-    - 安装：解压压缩包即可
-        - 注意事项：安装的目录建议不要有中文
-    - 卸载：删除解压的目录即可
-    - 启动：
-    - 关闭
-    - 配置
+    - 下载安装：sudo apt-get install tomcat8
+    - 卸载：sudo apt-get remove tomcat8
+    - 启动：service tomcat8 start
+    - 访问：localhost:8080
+    - 关闭：service tomcat8 stop
+    - 查看状态：service tomcat8 status
+    - 配置：
+    - 修改端口号
+        * conf/server.xml
+        * <Connector port="8888" protocol="HTTP/1.1"
+           connectionTimeout="20000"
+           redirectPort="8445" />
+        * 一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。
+            * 好处：在访问时，就不用输入端口号
     - 目录结构
         - bin：可执行文件
         - conf：配置文件
