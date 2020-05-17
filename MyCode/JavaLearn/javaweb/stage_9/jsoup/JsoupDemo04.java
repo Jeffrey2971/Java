@@ -41,7 +41,16 @@ public class JsoupDemo04 {
         Element element_student = document.getElementsByTag("student").get(0);
         Elements elements_name = element_student.getElementsByTag("name");
         System.out.println(elements_name.size());
-
+        // 获取student对象的属性值
+        String number = element_student.attr("NUMBER");
+        System.out.println(number);
+        System.out.println("----------");
+        // 获取文本内容
+        String text = elements_name.text();
+        String html = elements_name.html();
+        System.out.println(text);
+        System.out.println("-----------");
+        System.out.println(html);
 
     }
 

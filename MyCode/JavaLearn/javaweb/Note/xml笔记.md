@@ -131,6 +131,8 @@
                         - 获取属性值
                             - String attr(String key)：根据属性名称获取属性值
                         - 获取文本内容
-                            - String text()：获取文本内容
-                            - String innerHTML()：获取标签体的所有内容(包括子标签的字符串内容)
+                            - String text()：获取文本内容，获取纯文本内容
+                            - String innerHTML()：获取标签体的所有内容(包括子标签的标签和文本字符串内容)
                     - Node：节点对象
+                        - 是Document和Element的父类
+                            

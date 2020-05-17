@@ -2,7 +2,10 @@
 
  <students>
 	<student number="heima_0001">
-		<name id="a">mable</name>
+		<name id="a">
+			<xing>张</xing>
+			<ming>雯蔚</ming>
+		</name>
 		<age>23</age>
 		<sex>male</sex>
 	</student>
