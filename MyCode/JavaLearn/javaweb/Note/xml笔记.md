@@ -143,4 +143,5 @@
                     - xpath
                         - XPath即为XML路径语言（XML Path Language），它是一种用来确定XML文档中某部分位置的语言。
                             - 使用jsoup的xpath需要额外导入jar包
+                            - 查询w3cshool参考手册，使用xpath的语法完成查询
                     
