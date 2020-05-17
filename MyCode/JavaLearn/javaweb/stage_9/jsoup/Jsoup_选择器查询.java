@@ -11,10 +11,10 @@ import java.io.IOException;
 /**
  * 选择器查询
  */
-public class JsoupDemo05 {
+public class Jsoup_选择器查询 {
     public static void main(String[] args) throws IOException {
         // 1、获取student.xml的path
-        String path = JsoupDemo05.class.getClassLoader().getResource("student.xml").getPath();
+        String path = Jsoup_选择器查询.class.getClassLoader().getResource("student.xml").getPath();
         // 2、获取Document对象
         Document document = Jsoup.parse(new File(path), "utf-8");
 
