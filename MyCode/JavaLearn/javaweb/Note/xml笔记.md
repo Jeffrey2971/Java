@@ -135,4 +135,12 @@
                             - String innerHTML()：获取标签体的所有内容(包括子标签的标签和文本字符串内容)
                     - Node：节点对象
                         - 是Document和Element的父类
-                            
+                      
+                - 快捷查询方式
+                    - selector：选择器
+                        - 使用的方法：Element select(String cssQuery)
+                            - 语法：参考selector类中定义的语法
+                    - xpath
+                        - XPath即为XML路径语言（XML Path Language），它是一种用来确定XML文档中某部分位置的语言。
+                            - 使用jsoup的xpath需要额外导入jar包
+                    
