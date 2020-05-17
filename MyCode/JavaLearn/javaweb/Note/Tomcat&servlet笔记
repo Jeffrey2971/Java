@@ -41,6 +41,8 @@
     - 关闭：service tomcat8 stop
     - 查看状态：service tomcat8 status
     - 配置：
+        - 部署项目的方式
+            - 直接将项目放入webapps目录中即可
     - 修改端口号
         * conf/server.xml
         * <Connector port="8888" protocol="HTTP/1.1"
