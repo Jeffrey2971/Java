@@ -21,7 +21,7 @@ public class ServletDemo implements Servlet {
         System.out.println("Servlet4.0来啦...");
     }
 
-    @Override
+
     public String getServletInfo() {
         return null;
     }

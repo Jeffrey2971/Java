@@ -66,8 +66,8 @@
                                 - lib目录：放置依赖jar包
             - 将Tomcat集成到idea中，并且创建JavaEE项目，部署项目
             
-                        
-                        
+              ​          
+        
     - 修改端口号
         * conf/server.xml
         * <Connector port="8888" protocol="HTTP/1.1"
@@ -94,7 +94,7 @@
         - public class ServletDemo01 implements Servlet
     - 实现接口中的抽象方法
     - 配置servlet，在web.xml中
-            <!--配置Servlet-->
+            <!--配置Servletxiugaizhi-->
             <servlet>
                 <servlet-name>test1</servlet-name>
                 <servlet-class>web.servlet.ServletDemo01</servlet-class>
@@ -103,3 +103,48 @@
                 <servlet-name>test1</servlet-name>
                 <url-pattern>/test1</url-pattern>
             </servlet-mapping>
+- 执行原理：
+    - 当服务器接收到客户端浏览器的请求后，会解析请求的url路径，获取访问的servlet的资源路径
+    - 查找web.xml文件，是否有对应的标签<url-pattern>标签体内容
+    - 如果有，则在找到对应的<servlet-class>全类名
+    - Tomcat会将字节码文件加载进内存并且创建其对象
+    - 调用其方法
+- servlet中的生命周期
+    - 被创建：执行init方法，只执行一次(只会被创建一次)
+        - Servlet什么时候被创建？
+            - 在web.xml的<servlet>标签下配置
+            - 默认情况下，第一次被访问时，Servlet被创建
+            - 可以配置指定Servlet的创建时机
+                - 第一次被访问时，创建
+                    - <load-on-startup>的值为复数
+                - 在服务器启动时创建
+                    - <load-on-startup>的值为0或正整数
+        - Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的
+            - 多个用户同时访问时，可能存在线程安全问题
+            - 解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对其修改值
+    - 提供服务：执行servlet方法，会执行多次
+        - 每次访问Servlect时，Service方法都会被调用一次
+    - 销毁：执行destroy，只执行一次
+        - servket被销毁时执行。服务器被关闭时，Servlet被销毁
+        - 只有服务器正常关闭时，才会执行destroy
+        - destroy方法在Servlet被销毁之前执行，一般用于释放资源
+- Servlet3.0
+    - 好处
+        - 支持注解配置，可以不需要web.xml
+    - 步骤
+        - 创建JavaEE项目，选择Servlet的版本3.0或以上，可以不创建web.xml
+        - 定义一个类，实现Servlet接口
+        - 复写方法
+        - 在类上使用@webServlet注解，进行配置
+            - @WebServlet("/资源路径")
+
+
+
+## idea与Tomcat的相关配置
+
+- idea会为每一个Tomcat部署的项目单独建立一份配置文件
+  - 查看控制台的log输出：Using CATALINA_BASE:
+- 工作空间项目和Tomcat部署的Web项目
+  - Tomcat正真访问的是“Tomcat部署的Web项目”，这个项目对应着“工作空间项目”的Web目录下的所有资源
+  - WEB-INF目录下的资源不能被浏览器直接访问
+  - 断点调试：Debug方式启动
