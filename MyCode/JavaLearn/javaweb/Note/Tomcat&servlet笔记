@@ -43,6 +43,31 @@
     - 配置：
         - 部署项目的方式
             - 直接将项目放入webapps目录中即可
+                - /hello：项目的访问路径-->虚拟目录
+                - hello.html：资源文件
+                - 简化部署
+                    - 将项目打成一个war包，将war包放置到webapps目录下，这个war包将会自动解压为一个项目，删除war包后这个项目也将被自动删除
+                    - 将当前目录下的所有文件打包为test.war包：jar -cvfM0 test.war ./
+                - 配置server.xml文件
+                    - 在host标签体中配置
+                        <!--项目部署-->
+                        <Context docBase="/var/lib/tomcat8/webapps/hello" path="/test" />
+                    - path：虚拟目录
+                -  在conf/Catalina/localhost下创建任意名称的xml文件，在文件中编写：
+                    - <Context docBase="/var/lib/tomcat8/webapps/hello" />
+                    - 虚拟目录就是：XML文件的名称
+            - 静态项目和动态项目
+                - 目录结构
+                    - Java动态项目目录结构
+                        - 项目的根目录
+                            - WEB-INF目录
+                                - web.xml：Web核心配置文件
+                                - classed目录：放置字节码文件的目录
+                                - lib目录：放置依赖jar包
+            - 将Tomcat集成到idea中，并且创建JavaEE项目，部署项目
+            
+                        
+                        
     - 修改端口号
         * conf/server.xml
         * <Connector port="8888" protocol="HTTP/1.1"
