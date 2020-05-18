@@ -83,3 +83,23 @@
         - temp：临时文件
         - webapps：存放Web项目
         - work：存放运行时的数据
+        
+## servlet：server applet
+- 概念：运行服务器端的小程序
+    - servlet：就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则
+    - 自定义一个类，实现servlet接口，复写方法
+- 快速入门
+    - 创建Javaee的项目
+    - 定义一个类，实现servlet接口
+        - public class ServletDemo01 implements Servlet
+    - 实现接口中的抽象方法
+    - 配置servlet，在web.xml中
+            <!--配置Servlet-->
+            <servlet>
+                <servlet-name>test1</servlet-name>
+                <servlet-class>web.servlet.ServletDemo01</servlet-class>
+            </servlet>
+            <servlet-mapping>
+                <servlet-name>test1</servlet-name>
+                <url-pattern>/test1</url-pattern>
+            </servlet-mapping>
