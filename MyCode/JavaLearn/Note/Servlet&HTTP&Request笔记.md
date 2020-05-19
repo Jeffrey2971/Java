@@ -138,7 +138,15 @@
                 - post方式：会发生乱码
                     - 解决方式
                         - 在获取参数前，设置request编码：request.setCharacterEncoding("utf-8");
+        - 请求转发：一种在服务器内部资源的跳转方式
+            - 步骤
+                - 通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)
+                - 使用RequestDispatcher对象进转发：forward(ServletRequest request, ServletResponse response)
+            - 特点
+                - 浏览器地址栏路径不发生变化
+                - 
                 
-        - 请求转发
+        
+            
         - 共享数据
         - 获取ServletContext对象
