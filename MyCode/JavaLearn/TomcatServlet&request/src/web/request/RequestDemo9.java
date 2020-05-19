@@ -20,7 +20,9 @@ import java.io.IOException;
 public class RequestDemo9 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("requestDemo9被访问了");
-
+        // 获取数据
+        Object msg = request.getAttribute("mable");
+        System.out.println(msg);
 
     }
 
