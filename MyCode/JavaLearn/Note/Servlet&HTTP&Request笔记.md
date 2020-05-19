@@ -144,7 +144,13 @@
                 - 使用RequestDispatcher对象进转发：forward(ServletRequest request, ServletResponse response)
             - 特点
                 - 浏览器地址栏路径不发生变化
-                - 
-            
+                - 只能转发到当前的服务器内部资源中
+                - 转发是一次请求
         - 共享数据
+            - 域对象：一个有作用范围的对象，可以在范围内共享数据
+            - request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据
+            - 方法
+                - setAttribute(String name, Object obj)：存储数据
+                - Object getAttribute(String name)：通过键获取值
+                - void removeAttribute(String name)：通过键移除键值对
         - 获取ServletContext对象

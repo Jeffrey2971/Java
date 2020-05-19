@@ -24,8 +24,8 @@ public class RequestDemo8 extends HttpServlet {
         // 转发到requestDemo9
         /*RequestDispatcher requestDispatcher = request.getRequestDispatcher("/requestDemo9");
         requestDispatcher.forward(request, response);*/
-        // request.getRequestDispatcher("/requestDemo9").forward(request,response);
-        request.getRequestDispatcher("https://www.baidu.com").forward(request,response);
+         request.getRequestDispatcher("/requestDemo9").forward(request,response);
+        //request.getRequestDispatcher("https://www.baidu.com").forward(request,response);
     }
 
 
