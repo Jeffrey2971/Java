@@ -155,3 +155,110 @@
                 - void removeAttribute(String name)：通过键移除键值对
         - 获取ServletContext对象
             - ServletContext getServletContext()
+            
+## 用户登录案例
+- 用户登录案例需求：
+    1.编写login.html登录页面
+        username & password 两个输入框
+    2.使用Druid数据库连接池技术,操作mysql，day14数据库中user表
+    3.使用JdbcTemplate技术封装JDBC
+    4.登录成功跳转到SuccessServlet展示：登录成功！用户名,欢迎您
+    5.登录失败跳转到FailServlet展示：登录失败，用户名或密码错误
+
+- 分析
+- 开发步骤
+    - 创建项目，导入HTML页面，配置文件，导入jar包
+    - 创建数据库环境
+        create table user(
+            id INT primary key AUTO_INCREMENT,
+            username varchar(32) unique not null,
+            password varchar(32) not null
+        )
+    - 创建包domain，创建user类
+        package domain;
+        
+        /*
+            用户的实体类
+         */
+        
+        public class User {
+            private int id;
+            private String username;
+            private String password;
+        
+            public int getId() {
+                return id;
+            }
+        
+            public void setId(int id) {
+                this.id = id;
+            }
+        
+            public String getUsername() {
+                return username;
+            }
+        
+            public void setUsername(String username) {
+                this.username = username;
+            }
+        
+            public String getPassword() {
+                return password;
+            }
+        
+            public void setPassword(String password) {
+                this.password = password;
+            }
+        
+            @Override
+            public String toString() {
+                return "User{" +
+                        "id=" + id +
+                        ", username='" + username + '\'' +
+                        ", password='" + password + '\'' +
+                        '}';
+            }
+        }
+    - 创建包dao，创建类UserDao，提供login方法
+        package dao;
+        
+        /*
+            操作数据库中User表类
+         */
+        
+        import domain.User;
+        import org.springframework.dao.DataAccessException;
+        import org.springframework.jdbc.core.BeanPropertyRowMapper;
+        import org.springframework.jdbc.core.JdbcTemplate;
+        import util.JDBCUtils;
+        
+        public class UserDao {
+        
+            // 声明JDBCTemplate对象共用
+            private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
+            /**
+             * 登录方法
+             * @param loginUser 用户名和密码
+             * @return user包含用户全部数据，没有查询到返回null
+             */
+        
+            public User login(User loginUser){
+                try {
+                    // 编写SQL
+                    String sql = "select * from user where username = ? and password = ?";
+                    // 调用query方法
+                    User user = template.queryForObject(sql,
+                            new BeanPropertyRowMapper<User>(User.class),
+                            loginUser.getUsername(), loginUser.getPassword());
+                    return user;
+                } catch (DataAccessException e) {
+                    e.printStackTrace(); // 记录日志
+                    return null;
+                }
+            }
+        
+        }
+    - 编写web.servlet.LoginServlet类
+    
+    - login.html form表单中的action路径的写法
+        - 虚拟目录 +　Servlet的资源路径
