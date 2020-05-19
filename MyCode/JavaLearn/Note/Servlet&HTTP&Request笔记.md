@@ -119,4 +119,20 @@
                 - Enumeration<String> getHeaderNames()：获取所有的请求头名称
                 
         - 获取请求体数据
+            - 请求体：只有POST请求方式，才有请求体，在请求体中封装了POST请求的请求参数
+            - 步骤
+                - 获取流对象
+                    - BufferedReader getReader()：获取字符输入流，只能操作字符数据
+                    - ServletInputStream getInputStream()：获取字节输入流，可以操作所有类型的数据
+                        - 文件上传
+                - 再从流对象中拿取数据
+                
     - 其他功能
+        - 获取请求参数通用方式：不论GET还是post请求方式都可以使用以下方法获取请求参数
+            - String getParameter(String name)：根据参数名称获取参数值      username=jeffrey&password=123
+            - String[] getParameterValues(String name)：根据参数名称获取参数值的数组       hobby=xx&hobby=game
+            - Enumeration<String> getParameterNames()：获取所有请求的参数名称
+            - Map<String, String[]> getParameterMap()：获取所有参数的Map集合
+        - 请求转发
+        - 共享数据
+        - 获取ServletContext对象

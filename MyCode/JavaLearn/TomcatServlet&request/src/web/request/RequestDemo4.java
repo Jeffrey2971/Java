@@ -22,5 +22,21 @@ public class RequestDemo4 extends HttpServlet {
         String referer = request.getHeader("referer");
         System.out.println(referer);
 
+        // 防盗链
+        if(referer!=null){
+            if(referer.contains("/tomcat")){
+                // 正常访问
+                System.out.println("你好呀！");
+                response.setContentType("text/html;charset=utf-8");
+                response.getWriter().write("你好呀！");
+            }else{
+                // 盗链
+                System.out.println("滚蛋～～");
+                response.setContentType("text/html;charset=utf-8");
+                response.getWriter().write("滚蛋！");
+            }
+            System.out.println("???");
+        }
+
     }
 }
