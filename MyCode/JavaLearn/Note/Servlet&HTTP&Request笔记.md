@@ -133,6 +133,12 @@
             - String[] getParameterValues(String name)：根据参数名称获取参数值的数组       hobby=xx&hobby=game
             - Enumeration<String> getParameterNames()：获取所有请求的参数名称
             - Map<String, String[]> getParameterMap()：获取所有参数的Map集合
+            - 中文乱码问题
+                - get方式：Tomcat8已将get方法乱码问题解决了
+                - post方式：会发生乱码
+                    - 解决方式
+                        - 在获取参数前，设置request编码：request.setCharacterEncoding("utf-8");
+                
         - 请求转发
         - 共享数据
         - 获取ServletContext对象
