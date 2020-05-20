@@ -262,3 +262,22 @@
     
     - login.html form表单中的action路径的写法
         - 虚拟目录 +　Servlet的资源路径
+    
+    - BeanUtils工具类，简化完成数据封装
+        - 用于封装JavaBean
+        - JavaBean：标准的Java类
+            - 定义要求
+                - 类必须被public修饰
+                - 必须提供空参的构造器
+                - 成员变量必须使用private修饰
+                - 提供公共的setter和getter方法
+        
+            - 功能：封装数据
+        - 概念
+            - 成员变量：被private
+            - 属性：setter和getter方法截取后的产物
+                - 例如：getUsername() --> Username --> username
+        - 方法
+            - setProperty()
+            - getProperty()
+            - populate(OObject obj, Map map)：将Map集合的键值对信息封装到对应的JavaBean对象中        
