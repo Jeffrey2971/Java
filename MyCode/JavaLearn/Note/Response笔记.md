@@ -15,25 +15,37 @@
 - 响应消息：服务器端发送给客户端的数据
     - 数据格式
         - 响应行
+            - 组成：协议/版本 HTTP/1.1 200 响应状态码 状态码描述
+            - 响应的状态码：服务器告诉浏览器本次请求和响应的状态
+                - 状态码都是三位数字
+                     分类
+                        - 1xx：服务器接收客户端消息，但没有接收完成，等待一段时间后发送1xx状态码
+                        - 2xx：成功200
+                        - 3xx：重定向，代表：302(重定向)，304(访问缓存)
+                        - 4xx：客户端错误
+                            - 404：请求路径没有对应的资源
+                            - 405：请求方式没有对应的doXXX方法
+                        - 5xx：服务器端错误，代表500(服务器内部出现异常)
+                            - 
+                 
         - 响应头
         - 响应空行
         - 响应体
     - 响应字符串格式
-        HTTP/1.1 200 OK
-        Bdpagetype: 1
-        Bdqid: 0xa777f23000001757
-        Cache-Control: private
-        Connection: keep-alive
-        Content-Encoding: gzip
-        Content-Type: text/html;charset=utf-8
-        Date: Wed, 20 May 2020 10:46:00 GMT
-        Expires: Wed, 20 May 2020 10:46:00 GMT
-        Server: BWS/1.1
-        Set-Cookie: BDSVRTM=14; path=/
-        Set-Cookie: BD_HOME=1; path=/
-        Set-Cookie: H_PS_PSSID=31622_1457_31325_21088_31593_31606_31464_30823_26350_22157; path=/; domain=.baidu.com
-        Strict-Transport-Security: max-age=172800
-        Traceid: 1589971560071404570612067380014534891351
-        X-Ua-Compatible: IE=Edge,chrome=1
-        Transfer-Encoding: chunked
+        HTTP/1.1 200 
+        Set-Cookie: JSESSIONID=549E6DDE2390C71CB41377962379AD6D; Path=/; HttpOnly
+        Content-Type: text/html;charset=UTF-8
+        Content-Length: 101
+        Date: Wed, 20 May 2020 13:19:08 GMT
+        
+        <html>
+          <head>
+            <title>$Title$</title>
+          </head>
+          <body>
+          Hello，response
+          </body>
+        </html>
+‘
+
     
