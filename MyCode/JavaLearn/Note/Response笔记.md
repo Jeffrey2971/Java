@@ -51,6 +51,14 @@
           Hello，response
           </body>
         </html>
-‘
+        
+## Response对象
+- 功能：设置响应消息
+    - 设置响应行
+        - 格式：HTTP/1.1 200 ok
+        - 设置状态码：setStatus(int sc)
+    - 设置响应头
+        - 格式：
+    - 设置响应体
 
     
