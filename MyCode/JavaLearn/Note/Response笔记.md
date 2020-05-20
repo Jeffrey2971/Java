@@ -30,8 +30,12 @@
             - 格式：头名称:值
             - 常见的响应头
                 - Content-Type：告诉客户端浏览器本次的响应体数据格式以及编码格式
+                - Content-disposition：服务器告诉客户端以什么格式打开响应体数据
+                    - 值
+                        - in-line：默认值，在当前页面内打开
+                        - attachment;filename=xxx：以附件形式打开响应体，文件下载
         - 响应空行
-        - 响应体
+        - 响应体：传输的数据
     - 响应字符串格式
         HTTP/1.1 200 
         Set-Cookie: JSESSIONID=549E6DDE2390C71CB41377962379AD6D; Path=/; HttpOnly
