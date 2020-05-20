@@ -67,6 +67,22 @@
 
 - 案例
     - 完成重定向
+        // 访问/servletDemo1自动跳转到servletDemo2
+            // 1、设置状态码为302
+        response.setStatus(302);
+            // 2、设置响应头location
+        response.setHeader("location", "/response/responseDemo2");
+        // 简化重定向方法
+        response.sendRedirect("/response/responseDemo2");
+        - 重定向的特点
+            - 转发地址发生变化
+            - 重定向可以访问其他站点的资源
+            - 重定向是两次请求，不能使用request对象共享数据
+        - 转发的特点
+            - 转发地址栏路径不变
+            - 转发只能访问当前服务器下的资源
+            - 转发是一次请求，可以使用request对象共享数据
+        - 路径的写法
     - 服务器输出字符数据到浏览器
     - 服务器输出字节数据到浏览器
     - 验证码
