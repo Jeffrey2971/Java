@@ -20,6 +20,16 @@
                 img.src = "/response/checkCodeServlet?" + date
 
             }
+            var img_href = document.getElementById("change");
+            // 2、绑定单击事件
+            img_href.onclick = function () {
+                // 加时间戳
+                var date = new Date().getTime();
+                img_href.src = "/response/checkCodeServlet?" + date
+
+            }
+
+
 
         }
     </script>
@@ -27,9 +37,9 @@
 </head>
 <body>
 
-<img src="/response/checkCodeServlet" alt="" id="checkCode"/>
+<img src="/response/checkCodeServlet" id="checkCode"/>
 
-<a href="" id="change">换一张</a>
+<a href="javascript:void(0)" id="change">换一张</a>
 
 </body>
 </html>
