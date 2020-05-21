@@ -22,8 +22,12 @@ public class ResponseDemo1 extends HttpServlet {
         response.setHeader("location", "/response/responseDemo2");*/
 
         request.setAttribute("msg","test");
+
+        // 动态获取虚拟目录
+        String contextPath = request.getContextPath();
+
         // 简化重定向方法
-         response.sendRedirect("/response/responseDemo2");
+         response.sendRedirect(contextPath + "/responseDemo2");
         //response.sendRedirect("https://www.baidu.com");
     }
 
