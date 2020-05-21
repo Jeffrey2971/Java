@@ -58,8 +58,6 @@ public class checkCodeServlet extends HttpServlet {
         }
 
 
-
-
         // 将图片输出到页面展示
         ImageIO.write(image, "jpg", response.getOutputStream());
     }
