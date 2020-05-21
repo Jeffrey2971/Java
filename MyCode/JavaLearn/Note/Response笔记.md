@@ -128,7 +128,8 @@
 - 功能
      - 获取MIME类型
         - MIME类型：在互联网通信过程中定义的一种文件数据类型
-            - 格式：大类型/小类型    text/html       image/jpeg
-        - 获取：String getMimeType(String file)    
+            - 格式：大类型/小类型  text/html     image/jpeg
+        - 获取String getMimeType(String file)  
      - 域对象：共享数据
+        - ServletContext对象范围：所用用户的请求数据
      - 获取文件的真实(服务器)路径
