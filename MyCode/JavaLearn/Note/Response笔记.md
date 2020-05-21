@@ -133,3 +133,25 @@
      - 域对象：共享数据
         - ServletContext对象范围：所用用户的请求数据
      - 获取文件的真实(服务器)路径
+        - 方法：String getRealPath(String path)
+            -  servletContext
+            
+## 案例
+- 文件下载需求：
+	- 1. 页面显示超链接
+	- 2. 点击超链接后弹出下载提示框
+	- 3. 完成图片文件下载
+
+- 分析
+    - 超链接指定的资源如果能够被浏览器所解析，则在浏览器中直接展示，如果不能解释，则弹出下载提示框，不满足需求
+    - 任何资源都需要弹出下载提示框
+    - 使用响应头设置资源的打开方式
+        - content-disposition:attachment;filename=xxx
+    
+    - 步骤
+        - 定义页面，编辑超链接的href属性，指向一个servlet类，传递资源的名称filename 
+        - 定义Servlet
+            - 获取文件的名称
+            - 使用字节输入流加载文件进内存
+            - 指定response的header响应头：content-disposition:attachment;filename=xxx
+            - 将数据写出到response的输出流
