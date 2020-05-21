@@ -1,4 +1,4 @@
-package web;
+package web.servlet;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;

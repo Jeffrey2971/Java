@@ -120,6 +120,11 @@
         
 ## ServletContext对象
 - 概念：代表整个Web应用，可以和Servlet程序的容器(服务器)进行通信
+- 获取
+    - 通过request对象获取
+        request.getServletContext();
+    - 通过httpServlet获取
+        this.getServletContext();
 - 功能
      - 获取MIME类型：
      - 域对象：共享数据
