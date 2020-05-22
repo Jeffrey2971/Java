@@ -72,4 +72,13 @@
     - Java Server pages：Java服务器端页面
         - 可理解为特殊的页面，其中既可以直接定义HTML标签，又可以定义Java代码
         - 用于简化书写
-        
+
+- 原理
+    - JSP本质上就是一个servlet
+
+- JSP脚本：JSP定义Java代码的方式
+    - <% Java代码 %>：定义的Java代码，在service方法中。service可以定义，该脚本中就可以定义什么
+    - <%! Java代码 %>：定义的Java代码，在JSP转换后的Java类的成员位置中。
+    - <%= Java代码 %>：定义的Java代码，会输出到页面上，输出语句中可以定义什么，该脚本中就可以定义什么
+
+- JSP的内置对象
