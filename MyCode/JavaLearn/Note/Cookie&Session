@@ -31,6 +31,9 @@
 - cookie的作用和特点
     - cookie存储数据在客户端浏览器
     - 浏览器对于单个cookie的大小有限制(4kb)以及对同一个域名下的总cookie数量也有限制(20个)
+    - 作用
+        - cookie一般用于存储少量不太敏感的数据
+        - 在不登录的情况下，完成服务器对客户端的身份识别
     
 - cookie细节
     - 一次可以发送多个cookie，可创建多个cookie对象，使用response调用多次addCookie发送cookie即可
@@ -42,10 +45,24 @@
                 - 零：删除cookie信息
     - 在Tomcat8之前，cookie中不能直接存储中文数据
         - 需要将中文数据转码，一般采用url编码(%E3)
-    - 在Tomcat8之后，cookie支持中文数据
+    - 在Tomcat8之后，cookie支持中文数据，但仍然不支持特殊字符，应使用URL编码存储，URL解码
     - 假设在一个Tomcat服务器中，部署了多个web项目，那么在这些web项目中默认情况下cookie不能共享
     - setPath(String path)：设置cookie的获取范围，默认情况下，设置当前的虚拟目录
         - 如果要共享，则可以将path设置为"/"
     - 不同的Tomcat服务器间cookie共享问题
         - setDomain(String path)：如果设置一级域名相同，那么多个服务器之间的cookie可以共享
             - setDomain(".baidu.com")，那么tieba.baidu.com和new.baidu.com中cookie可以共享
+
+- 案例：记住上一次的访问时间
+    - 案例需求：
+      	1. 访问一个Servlet，如果是第一次访问，则提示：您好，欢迎您首次访问。
+      	2. 如果不是第一次访问，则提示：欢迎回来，您上次访问时间为:显示时间字符串
+    - 分析
+        - 可以采用cookie来完成
+        - 在服务器中的Servlet中判断是否有一个名为lastTime的cookie
+            - 有：不是第一次访问
+                - 相应数据：欢迎回来，您上次的访问时间为：时间
+                - 写回cookie：更新时间k
+            - 没有：是第一次访问
+                - 相应数据：您好，欢迎您首次访问。
+                - 写回cookie:lastTime = 时间
