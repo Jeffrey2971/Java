@@ -28,6 +28,10 @@
 - 实现原理
     - 基于响应头set-cookie和请求头cookie实现
     
+- cookie的作用和特点
+    - cookie存储数据在客户端浏览器
+    - 浏览器对于单个cookie的大小有限制(4kb)以及对同一个域名下的总cookie数量也有限制(20个)
+    
 - cookie细节
     - 一次可以发送多个cookie，可创建多个cookie对象，使用response调用多次addCookie发送cookie即可
     - 默认情况下，当浏览器关闭，Cookie数据被销毁
@@ -37,4 +41,11 @@
                 - 复数：默认值
                 - 零：删除cookie信息
     - 在Tomcat8之前，cookie中不能直接存储中文数据
+        - 需要将中文数据转码，一般采用url编码(%E3)
     - 在Tomcat8之后，cookie支持中文数据
+    - 假设在一个Tomcat服务器中，部署了多个web项目，那么在这些web项目中默认情况下cookie不能共享
+    - setPath(String path)：设置cookie的获取范围，默认情况下，设置当前的虚拟目录
+        - 如果要共享，则可以将path设置为"/"
+    - 不同的Tomcat服务器间cookie共享问题
+        - setDomain(String path)：如果设置一级域名相同，那么多个服务器之间的cookie可以共享
+            - setDomain(".baidu.com")，那么tieba.baidu.com和new.baidu.com中cookie可以共享
