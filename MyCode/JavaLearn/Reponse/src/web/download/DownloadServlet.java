@@ -1,5 +1,7 @@
 package web.download;
 
+import web.util.DownLoadUtils;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -27,7 +29,13 @@ public class DownloadServlet extends HttpServlet {
         String mimeType = servletContext.getMimeType(filename); // 获取文件的mime类型
         response.setHeader("content-type", mimeType);
             // 设置响应头打开方式：content-disposition
-        response.setHeader("content-disposition", "attachment;filename=" + filename);
+        // 解决中文文件名问题
+            // 获取user-agent请求头
+        String agent = request.getHeader("user-agent");
+        // 使用工具类方法编码文件名
+        String fileName = DownLoadUtils.getFileName(agent, filename);
+
+        response.setHeader("content-disposition", "attachment;filename=" + fileName);
 
         // 将输入流的数据写出到输出流中
         ServletOutputStream sos = response.getOutputStream();

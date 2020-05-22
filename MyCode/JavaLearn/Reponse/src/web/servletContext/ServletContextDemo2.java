@@ -23,7 +23,7 @@ public class ServletContextDemo2 extends HttpServlet {
         ServletContext context = this.getServletContext();
 
         // 定义文件名称
-        String filename = "a.jpg";
+        String filename = "九尾.jpg";
 
         // 获取MiME类型
         String mimeType = context.getMimeType(filename);

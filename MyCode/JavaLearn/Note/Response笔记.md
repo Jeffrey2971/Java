@@ -155,3 +155,8 @@
             - 使用字节输入流加载文件进内存
             - 指定response的header响应头：content-disposition:attachment;filename=xxx
             - 将数据写出到response的输出流
+    - 问题
+        - 中文文件问题
+            - 解决思路
+                - 获取客户端使用的浏览器版本信息
+                - 根据不同的版本信息，响应不同的数据，设置filename的编码方式
