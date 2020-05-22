@@ -24,3 +24,10 @@
             - response.addCookie(Cookie cookie)
         - 获取cookie，拿到数据
             - cookie[] request.getCookies()
+     
+- 实现原理
+    - 基于响应头set-cookie和请求头cookie实现
+    
+- cookie细节
+    - 一次可以发送多个cookie，可创建多个cookie对象，使用response调用多次addCookie发送cookie即可
+    - 
