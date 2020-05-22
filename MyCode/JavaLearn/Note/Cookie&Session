@@ -30,4 +30,11 @@
     
 - cookie细节
     - 一次可以发送多个cookie，可创建多个cookie对象，使用response调用多次addCookie发送cookie即可
-    - 
+    - 默认情况下，当浏览器关闭，Cookie数据被销毁
+        - 设置cookie的生命周期，持久化存储
+            - setMaxAge(int seconds)
+                - 正数：将cookie数据化写入到硬盘文件中，持久化存储。cookie存活时间
+                - 复数：默认值
+                - 零：删除cookie信息
+    - 在Tomcat8之前，cookie中不能直接存储中文数据
+    - 在Tomcat8之后，cookie支持中文数据
