@@ -82,3 +82,11 @@
     - <%= Java代码 %>：定义的Java代码，会输出到页面上，输出语句中可以定义什么，该脚本中就可以定义什么
 
 - JSP的内置对象
+    - 在JSP页面中不需要获取和创建，可以直接使用的对象
+    - JSP中一共有9个内置对象
+    - request
+    - response
+    - out：字符输出流对象，可以将数据输出到页面上，和response.getWriter()类似
+        - response.getWriter()和out.writer()的区别
+            - 在Tomcat服务器正真给客户端做出响应之间，会先找response缓冲区数据，再找out缓冲区的数据
+            - 尽量不要使用response.getWriter()在页面上，避免打乱页面布局
