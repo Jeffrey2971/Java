@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: jeffrey
   Date: 2020/5/25
@@ -27,8 +28,17 @@ ${3 == 4}<br>
 <h3>逻辑运算符</h3>
 ${3>4 && 3<4}<br>
 ${3>4 and 3<4}<br>
-<h3></h3>
+<h4>empty运算符法</h4>
 
+<%
+    String str = "";
+    request.setAttribute("str", str);
+
+    List list = new ArrayList<>();
+    request.setAttribute("list", list);
+%>
+${not empty str}
+${empty list}
 
 </body>
 </html>
