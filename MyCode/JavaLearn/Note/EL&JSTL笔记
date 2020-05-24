@@ -1,0 +1,41 @@
+# 今日内容
+- JSP
+    - 指令
+    
+    - 注释
+    
+    - 内置对象
+    
+- MVC开发模式
+
+- EL表达式
+
+- JSTL标签
+
+- 三层架构
+
+## JSP
+- 指令
+    - 作用：用于配置JSP页面，导入资源文件
+    - 格式
+        <%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %>
+    
+    - 分类
+        - page      ：配置JSP页面
+            - contentType：等同于response.setContentType()
+                - 设置响应体的mime类型以及字符集
+                - 设置当前JSP页面的编码(只能是高级的ide才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集)
+            - import：导包
+            - errorPage：当前页面发生异常后，会自动跳转到指定的错误页面
+            - isErrorPage：表示当前页面是否为错误页面
+                - true：可以使用内置对象Exception
+                - false：默认值，不能使用内置对象Exception
+        - include   ：页面包含的，导入页面的资源文件
+            - <%include file="top" %>
+        - taglib    ：导入资源
+            - 
+  
+    
+- 注释
+
+- 内置对象
