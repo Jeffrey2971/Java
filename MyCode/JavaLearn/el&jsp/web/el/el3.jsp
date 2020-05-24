@@ -28,12 +28,13 @@ ${requestScope.u}<br>
 -通过的是对象的属性来获取
     - setter或getter方法，去掉set或get后在将首字母转换为小写
     - setName --> Name --> name
-
+z
 --%>
 ${requestScope.u.name}<br>
 ${requestScope.u.age}<br>
 ${requestScope.u.birthday}<br>
-
+${requestScope.u.birthday.month + 1}<br>
+${u.birStr}<br>
 
 </body>
 </html>
