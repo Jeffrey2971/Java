@@ -90,4 +90,22 @@
         - \${表达式}：表示当前这个表达式被忽略
 - 使用
     - 运算
+        - 运算符
+            - 算术运算符：+ - * /(div) %(mod)
+            - 比较运算符：> < >= <= == !=
+            - 逻辑运算符：&&(and) ||(or) !(not)
+            - 空运算符：empty
+                - 功能：用于判断字符串、集合、数组长度是否为0并且是否为null
+                - ${empty list}
+                    
     - 获取值
+        - el表达式只能从域对象中获取值
+        - 语法：
+            - ${域名城.键名称}：从指定的域中获取指定键的值
+                - 域名城
+                    - pageScope         --> pageContext
+                    - requestScope      --> request
+                    - sessionScope      --> session
+                    - applicationScope  --> application(ServletContext) 
+                - 举个栗子：在request域中存储了name=mable
+                - 获取：${requestScope.name}

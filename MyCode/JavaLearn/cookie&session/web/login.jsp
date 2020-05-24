@@ -46,8 +46,12 @@
 
     </table>
 
-    <div><%=request.getAttribute("checkCode_error")%></div>
-    <div><%=request.getAttribute("login_error")%></div>
+    <%--  使用el表达式  --%>
+    ${requestScope.checkCode_error}
+    ${requestScope.login_error}
+
+    <%--<div><%=request.getAttribute("checkCode_error") == null ? "" : request.getAttribute("checkCode_error")%></div>
+    <div><%=request.getAttribute("login_error") == null ? "" : request.getAttribute("login_error")%></div>--%>
 
 </form>
 </body>
