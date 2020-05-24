@@ -24,5 +24,14 @@
 --%>
 
 <%--<input type="text">--%>
+
+<%
+        pageContext.setAttribute("msg", "hello");
+        pageContext.
+%>
+
+<%=pageContext.getAttribute("msg")%>
+
+
 </body>
 </html>
