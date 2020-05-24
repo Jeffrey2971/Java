@@ -109,3 +109,9 @@
                     - applicationScope  --> application(ServletContext) 
                 - 举个栗子：在request域中存储了name=mable
                 - 获取：${requestScope.name}
+            - ${键名}：表示依次从最小的域中查找，是否有该键对应的值，直到找到为止，建议使用在四个域中键没有重名的情况下
+                - ${name} --> pageScope --> requestScope --> sessionScope(找到了，返回结果，不会向下继续找) --> applicationScope
+            
+            - 获取对象、List集合，Map集合的值 
+                - 对象
+                    - 

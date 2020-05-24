@@ -8,12 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>el获取域中的数据</title>
+    <title>el获取域中的基本数据</title>
 </head>
 <body>
 <%
     // 在域中存储数据
     request.setAttribute("name", "mable");
+    session.setAttribute("name", "jeffrey");
     session.setAttribute("age", "21");
 %>
 
@@ -21,6 +22,9 @@
 ${requestScope.name}
 ${sessionScope.age}
 ${sessionScope.hobby}
+<br>
+<%--更简单的方式--%>
+${sessionScope.name}
 
 </body>
 </html>
