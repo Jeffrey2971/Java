@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            <label for="address">籍贯：</label>
+            <label for="jiguan">籍贯：</label>
             <select name="address" class="form-control" id="jiguan">
                 <option value="广东">广东</option>
                 <option value="广西">广西</option>
@@ -54,12 +54,12 @@
 
         <div class="form-group">
             <label for="qq">QQ：</label>
-            <input type="text" class="form-control" name="qq" placeholder="请输入QQ号码"/>
+            <input type="text" class="form-control" name="qq" placeholder="请输入QQ号码" id="qq"/>
         </div>
 
         <div class="form-group">
             <label for="email">Email：</label>
-            <input type="text" class="form-control" name="email" placeholder="请输入邮箱地址"/>
+            <input type="text" id="email" class="form-control" name="email" placeholder="请输入邮箱地址"/>
         </div>
 
         <div class="form-group" style="text-align: center">

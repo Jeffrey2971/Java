@@ -22,6 +22,7 @@ public class addUserServlet extends HttpServlet {
         // 获取参数信息
         Map<String, String[]> map = request.getParameterMap();
         // 封装对象
+        System.out.println(map == null);
         User user = new User();
         try {
             BeanUtils.populate(user, map);

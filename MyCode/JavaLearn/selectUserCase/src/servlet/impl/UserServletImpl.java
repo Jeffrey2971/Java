@@ -23,6 +23,7 @@ public class UserServletImpl implements UserServlet {
 
     @Override
     public void addUser(User user) {
+        dao.add(user);
 
     }
 
