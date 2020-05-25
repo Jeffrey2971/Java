@@ -32,5 +32,10 @@ public class UserServletImpl implements UserServlet {
         dao.delete(Integer.parseInt(id));
     }
 
+    @Override
+    public User findUserById(String id) {
+        return dao.findById(Integer.parseInt(id));
+    }
+
 
 }
