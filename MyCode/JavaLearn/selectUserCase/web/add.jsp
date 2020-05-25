@@ -22,14 +22,40 @@
     <script src="js/jquery-2.1.0.min.js"></script>
     <!-- 3. 导入bootstrap的js文件 -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("form").onsubmit = function () {
+                return checkName();
+
+            }
+            function checkName() {
+                var name = document.getElementById("name").value;
+                var sname = document.getElementById("sname");
+                if(name === ""){
+                    sname.innerHTML = "姓名不能为空"
+                    return false
+                }else{
+                    return true;
+                }
+
+            }
+
+        }
+    </script>
+    <style>
+        .error_color{
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <center><h3>添加联系人页面</h3></center>
-    <form action="${pageContext.request.contextPath}/addUserServlet" method="post">
+    <form action="${pageContext.request.contextPath}/addUserServlet" method="post" id="form">
         <div class="form-group">
             <label for="name">姓名：</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名">
+            <span class="error_color" id="sname"></span>
         </div>
 
         <div class="form-group">
