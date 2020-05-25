@@ -129,4 +129,80 @@
                 - 获取JSP其他八个内置对象
                      - ${pageContext.request.contextPath}：动态获取虚拟目录
             
-            
+## JSTL
+- 概念：JavaServer Pages Tag Library   JSP标准标签库
+    - 是由Apache组织提供的开源免费的JSP标签   <标签>
+- 作用：用于简化和替换JSP页面上的Java代码
+- 使用步骤
+    - 导入JSTL相关的jar包
+    - 标签标签库：taglib指令： <%@ taglib %>
+    - 使用标签
+- 常用的JSTL标签库
+    - if：相当于Java的if语句
+        - c:if标签
+            - 属性：test为必须属性，接收boolean表达式，如果表达式为true则显示if标签体内容，如果为false则不显示if标签体内容
+            - 一般情况下，test属性值会结合el表达式一起使用
+        - 注意事项
+            - c:if标签没有else的情况，如需else则可以再定义一个c:if标签
+    - choose：相当于Java的switch语句
+        - 使用choose标签取出数字，相当于switch声明
+        - 使用when标签做数字的判断，相当于case
+        - otherwise标签做其他情况的声明，相当于default
+    - foreach：相当于Java代码的for语句
+        - 完成重复性的操作
+            for(int i = 0; i < 10; i++){
+                ...
+            }
+        - 属性
+            - begin：开始值
+            - end：结束值
+            - var：临时变量
+            - step：步长
+            - varstatus：循环状态对象
+                - index：容器中元素的索引，从0开始
+                - count：循环的次数，从1开始
+        - 遍历容器
+            List<User> list;
+            for(User user : list){
+                ...
+            }
+        - 属性
+            - items：容器对象
+            - var：容器中元素的临时变量
+            - varStatus：循环状态对象
+                - index：容器中元素的索引，从0开始
+                - count：循环的次数，从1开始
+                
+    - 练习
+        - 需求：在request域中有一个存有User对象的List集合，需要使用JSTL+EL将List集合的数据展示到JSP页面的表格table中
+
+## 三层架构：软件设计架构
+- 界面层(表示层)：用户看到的界面，用户可以通过界面上组件和服务器进行交互
+- 业务逻辑层：处理业务逻辑(一些功能)
+- 数据访问层：操作数据库存储文件
+
+
+## 案例：用户信息查询列表展示
+- 需求：用户信息的增删改查操作
+- 设计
+    - 技术选型：Servlet+JSP+MYSQL+JDBCTemplate+Duird+BeanUtils+tomcat8
+    - 数据库设计
+        - create database selectUser; -- 创建数据库
+        - use selectUser; -- 使用数据库
+            create table user( -- 创建表
+                id int primary key auto_increment,
+                name varchar(32) not null,
+                gender varchar(5),
+                age int,
+                address varchar(32),
+                qq varchar(16),
+                email varchar(32)
+                
+            )
+    - 开发
+        - 环境搭建
+            - 创建数据库环境
+            - 创建项目，导入需要的jar包
+        - 敲代码
+    - 测试
+    - 部署运维
