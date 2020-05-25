@@ -31,4 +31,11 @@ public interface UserServlet {
      * @param user
      */
     void addUser(User user);
+
+
+    /**
+     * 根据id删除User
+     * @param id
+     */
+    void deleteUser(String id);
 }

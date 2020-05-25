@@ -44,7 +44,7 @@
     </script>
     <style>
         .error_color{
-            color: red;
+            color: #ff0000;
         }
     </style>
 </head>
