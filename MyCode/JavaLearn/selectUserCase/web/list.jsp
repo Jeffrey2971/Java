@@ -51,7 +51,7 @@
     </div>
     <div style="float:right;margin:10px">
 
-        <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
+        <td colspan="8" align="center"><a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加联系人</a></td>
         <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">删除选中</a></td>
     </div>
     <table border="1" class="table table-bordered table-hover">

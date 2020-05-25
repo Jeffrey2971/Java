@@ -30,4 +30,14 @@ public class UserDaoImpl implements dao.UserDao {
             return null;
         }
     }
+
+
+    @Override
+    public void add(User user) {
+        // 定义SQL
+        String sql = "insert into user values(null,?,?,?,?,?,?,null,null)";
+        // 执行sql
+        template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail());
+
+    }
 }

@@ -21,5 +21,10 @@ public class UserServletImpl implements UserServlet {
         return dao.findUserByUsernameAndPassword(user.getUsername(), user.getPassword());
     }
 
+    @Override
+    public void addUser(User user) {
+
+    }
+
 
 }
