@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class FilterDemo3 implements Filter {
     /**
      * 在服务器关闭后，Filter对象被销毁，如果服务器是正常关闭则会执行destroy方法，只执行一次，一般用于释放资源
