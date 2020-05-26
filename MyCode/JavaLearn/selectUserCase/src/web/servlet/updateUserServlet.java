@@ -4,7 +4,6 @@ import domain.User;
 import org.apache.commons.beanutils.BeanUtils;
 import servlet.UserServlet;
 import servlet.impl.UserServletImpl;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
