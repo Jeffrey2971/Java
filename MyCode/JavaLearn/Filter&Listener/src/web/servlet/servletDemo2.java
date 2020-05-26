@@ -11,6 +11,8 @@ import java.io.IOException;
 public class servletDemo2 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("updateServlet");
+        // 转发到index.jsp
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
