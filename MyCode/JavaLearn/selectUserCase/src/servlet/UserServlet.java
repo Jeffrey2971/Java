@@ -1,5 +1,6 @@
 package servlet;
 
+import domain.PageBean;
 import domain.User;
 
 import java.util.List;
@@ -60,4 +61,13 @@ public interface UserServlet {
      * @param ids
      */
     void delSelectUser(String[] ids);
+
+
+    /**
+     * 分页查询
+     * @param currentPage
+     * @param rows
+     * @return
+     */
+    PageBean<User> findUserByPage(String currentPage, String rows);
 }

@@ -2,6 +2,7 @@ package servlet.impl;
 
 import dao.UserDao;
 import dao.impl.UserDaoImpl;
+import domain.PageBean;
 import domain.User;
 import servlet.UserServlet;
 
@@ -52,6 +53,33 @@ public class UserServletImpl implements UserServlet {
             }
         }
 
+    }
+
+    @Override
+    public PageBean<User> findUserByPage(String _currentPage, String _rows) {
+        int currentPage = Integer.parseInt(_currentPage);
+        int rows = Integer.parseInt(_rows);
+
+        if(currentPage <= 0){
+            currentPage = 1;
+        }
+        // 创建空的JavaBean对象
+        PageBean<User> pb = new PageBean<User>();
+        // 设置参数
+        pb.setCurrentPage(currentPage);
+        pb.setRows(rows);
+        // 调用dao查询总记录数
+        int totalCount = dao.findTotalCount();
+        pb.setTotalCount(totalCount);
+        // 调用dao查询list集合
+            // 计算开始的记录索引
+        int start = (currentPage - 1) * rows;
+        List<User> list = dao.findByPage(start, rows);
+        pb.setList(list);
+        // 计算总页码
+        int totalPage = (totalCount % rows) == 0 ? (totalCount / rows) : (totalCount / rows + 1);
+        pb.setTotalPage(totalPage);
+        return pb;
     }
 
 
