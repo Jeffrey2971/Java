@@ -4,6 +4,7 @@ import domain.PageBean;
 import domain.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户管理的业务接口
@@ -64,10 +65,11 @@ public interface UserServlet {
 
 
     /**
-     * 分页查询
+     * 分页条件筛选查询
      * @param currentPage
      * @param rows
+     * @param condition
      * @return
      */
-    PageBean<User> findUserByPage(String currentPage, String rows);
+    PageBean<User> findUserByPage(String currentPage, String rows, Map<String, String[]> condition);
 }

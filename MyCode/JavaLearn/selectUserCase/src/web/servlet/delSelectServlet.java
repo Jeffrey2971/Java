@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/delSelectServlet")
+@WebServlet("/delSelectedServlet")
 public class delSelectServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取所有的id
@@ -20,7 +20,7 @@ public class delSelectServlet extends HttpServlet {
         UserServlet servlet = new UserServletImpl();
         servlet.delSelectUser(ids);
         // 跳转到查询所有的Servlet
-        response.sendRedirect(request.getContextPath() + "/userListServlet");
+        response.sendRedirect(request.getContextPath() + "/findUserByPageServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

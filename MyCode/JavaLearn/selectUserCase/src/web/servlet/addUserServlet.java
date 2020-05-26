@@ -36,7 +36,7 @@ public class addUserServlet extends HttpServlet {
         servlet.addUser(user);
 
         // 跳转到userListServlet
-        response.sendRedirect(request.getContextPath() + "/userListServlet");
+        response.sendRedirect(request.getContextPath() + "/findUserServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

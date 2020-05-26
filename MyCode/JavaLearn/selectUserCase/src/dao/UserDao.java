@@ -3,6 +3,7 @@ package dao;
 import domain.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户操作的Dao
@@ -24,16 +25,18 @@ public interface UserDao {
     /**
      * 查询总记录数
      * @return
+     * @param condition
      */
-    int findTotalCount();
+    int findTotalCount(Map<String, String[]> condition);
 
 
     /**
      * 分页查询每页的条目
      * @param start
      * @param rows
+     * @param condition
      * @return
      */
-    List<User> findByPage(int start, int rows);
+    List<User> findByPage(int start, int rows, Map<String, String[]> condition);
 }
 
