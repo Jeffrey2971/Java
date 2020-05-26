@@ -37,5 +37,10 @@ public class UserServletImpl implements UserServlet {
         return dao.findById(Integer.parseInt(id));
     }
 
+    @Override
+    public void updateUser(User user) {
+        dao.update(user);
+    }
+
 
 }

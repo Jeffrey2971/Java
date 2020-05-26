@@ -11,6 +11,7 @@ import java.util.List;
 
 public class UserDaoImpl implements dao.UserDao {
     private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
+
     @Override
     public List<User> findAll() {
         // 使用jdbc操作数据库
@@ -20,7 +21,7 @@ public class UserDaoImpl implements dao.UserDao {
     }
 
     @Override
-    public User findUserByUsernameAndPassword(String username, String password){
+    public User findUserByUsernameAndPassword(String username, String password) {
         try {
             String sql = "select * from user where username = ? and password = ?";
             User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
@@ -53,5 +54,13 @@ public class UserDaoImpl implements dao.UserDao {
     public User findById(int id) {
         String sql = "select * from user where id = ?";
         return template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), id);
+    }
+
+    @Override
+    public void update(User user) {
+        String sql = "update user set name= ?, gender = ?, age = ?, address = ?, qq = ?, email = ? where id = ?";
+        template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail(), user.getId());
+
+
     }
 }
