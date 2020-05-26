@@ -17,7 +17,7 @@ public class UserServletImpl implements UserServlet {
     }
 
     @Override
-    public User login(User user){
+    public User login(User user) {
         return dao.findUserByUsernameAndPassword(user.getUsername(), user.getPassword());
     }
 
@@ -44,11 +44,14 @@ public class UserServletImpl implements UserServlet {
 
     @Override
     public void delSelectUser(String[] ids) {
-        // 遍历数组
-        for (String id : ids) {
-            // 调用dao删除
-            dao.delete(Integer.parseInt(id));
+        if (ids != null && ids.length > 0) {
+            // 遍历数组
+            for (String id : ids) {
+                // 调用dao删除
+                dao.delete(Integer.parseInt(id));
+            }
         }
+
     }
 
 

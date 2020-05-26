@@ -40,8 +40,21 @@
             // 给删除选中按钮添加单击事件
             document.getElementById("deleteSelect").onclick = function () {
                 if (confirm("确定要删除选中条目吗？")) {
+                    var flag = false;
+                    // 判断是否选中条目
+                    var cbs = document.getElementsByName("uid");
+                    for (var i = 0; i < cbs.length; i++) {
+                        if(cbs[i].checked){
+                            // 有一个或以上被选中
+                            flag = true
+                            break;
+                        }
+                    }
+                    if(flag){ // 有条目被选中
+                        // 提交表单
+                        document.getElementById("form").submit();
+                    }
 
-                    document.getElementById("form").submit();
                 }
             }
             // 获取第一个cb
