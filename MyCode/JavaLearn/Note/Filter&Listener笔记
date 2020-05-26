@@ -58,4 +58,5 @@
                         - ERROR：错误跳转资源
                         - ASYNC：异步访问资源
                 - web.xml配置
+                    - 设置<dispatcher></dispatcher>标签即可，内容属性同上
         - 过滤器链(配置多个过滤器)
