@@ -1,5 +1,9 @@
 package web.servlet;
 
+import org.apache.commons.beanutils.BeanUtils;
+import servlet.UserServlet;
+import servlet.impl.UserServletImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +14,13 @@ import java.io.IOException;
 @WebServlet("/delSelectServlet")
 public class delSelectServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        // 获取所有的id
+        String[] ids = request.getParameterValues("uid");
+        // 调用Servlet删除
+        UserServlet servlet = new UserServletImpl();
+        servlet.delSelectUser(ids);
+        // 跳转到查询所有的Servlet
+        response.sendRedirect(request.getContextPath() + "/userListServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

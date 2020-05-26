@@ -42,5 +42,14 @@ public class UserServletImpl implements UserServlet {
         dao.update(user);
     }
 
+    @Override
+    public void delSelectUser(String[] ids) {
+        // 遍历数组
+        for (String id : ids) {
+            // 调用dao删除
+            dao.delete(Integer.parseInt(id));
+        }
+    }
+
 
 }

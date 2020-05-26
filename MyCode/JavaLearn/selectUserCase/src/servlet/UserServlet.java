@@ -53,4 +53,11 @@ public interface UserServlet {
      * @param user
      */
     void updateUser(User user);
+
+
+    /**
+     * 批量删除用户
+     * @param ids
+     */
+    void delSelectUser(String[] ids);
 }
