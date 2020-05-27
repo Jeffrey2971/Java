@@ -9,8 +9,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 敏感词汇过滤
@@ -26,7 +25,7 @@ public class SensitiveWordsFilter implements Filter {
         ServletRequest proxy_req = (ServletRequest) Proxy.newProxyInstance(req.getClass().getClassLoader(), req.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                if(method.getName().equals("getParameter")){
+                /*if(method.getName().equals("getParameter")){
                     // 增强返回值
                     String value = (String) method.invoke(req, args);
                     if(value!=null){
@@ -37,6 +36,19 @@ public class SensitiveWordsFilter implements Filter {
                         }
                     }
                     return value;
+                }*/
+
+                if(method.getName().equals("getParameterMap")){
+                    Map map = (Map) method.invoke(req, args);
+                    Set keySet = map.keySet();
+                    for (Object values : keySet) {
+                        String[] value = (String[]) map.get(values);
+                        for (String str : value) {
+                            System.out.println("str===" + str);
+
+                        }
+                    }
+
                 }
 
                 return method.invoke(req, args);
