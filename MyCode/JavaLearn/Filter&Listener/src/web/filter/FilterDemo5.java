@@ -8,7 +8,7 @@ import java.io.IOException;
 //@WebFilter(value="/index.jsp", dispatcherTypes = DispatcherType.REQUEST)
 // 只有转发访问index.jsp或浏览器直接访问时，该过滤器才会被执行
 //@WebFilter(value="/index.jsp", dispatcherTypes = DispatcherType.FORWARD)
-@WebFilter(value="/index.jsp", dispatcherTypes = {DispatcherType.FORWARD,DispatcherType.REQUEST})
+//@WebFilter(value="/index.jsp", dispatcherTypes = {DispatcherType.FORWARD,DispatcherType.REQUEST})
 public class FilterDemo5 implements Filter {
     public void destroy() {
     }
