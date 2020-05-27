@@ -106,6 +106,7 @@
                                     - 增强参数列表
                                     - 增强返回值类型
                                     - 增强方法体执行逻辑
+                                - Proxy.newProxyInstance(lenovo.getClass().getClassLoader(), lenovo.getClass().getInterfaces(), new InvocationHandler()
 ## Listener：监听器
 - 概念：Web的三大组件之一
     - 事件监听机制
