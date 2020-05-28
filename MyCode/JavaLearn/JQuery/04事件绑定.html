@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        // 给b1按钮添加单击事件
+
+        // 1、获取b1按钮
+
+        // JQuery入口函数(dom文档完成之后执行入口函数中的代码)
+        $(function () {
+            $("#b1").click(function () {
+                alert("abc")
+
+            });
+
+        });
+        /* window.onload 和 $(function) 的区别
+
+         */
+
+    </script>
+</head>
+<body>
+<div id="div1">div1...</div>
+<div id="div2">div2...</div>
+<input type="button" id="b1" value="点我">
+
+</body>
+</html>
