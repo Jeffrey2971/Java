@@ -1,16 +1,6 @@
 package cookie;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 /*
 - 案例：记住上一次的访问时间
@@ -27,6 +17,12 @@ import java.util.Date;
                 - 相应数据：您好，欢迎您首次访问。
                 - 写回cookie:lastTime = 时间
  */
+
+import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet("/cookieCase")
 public class CookieCase extends HttpServlet {

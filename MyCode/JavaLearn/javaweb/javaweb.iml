@@ -3,13 +3,12 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/stage_9" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stage_4" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jsoup" level="project" />
     <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="library" name="libs3" level="project" />
-    <orderEntry type="library" name="libs1" level="project" />
+    <orderEntry type="module" module-name="stage_4" />
   </component>
 </module>
