@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
+        /*
+        - 遍历
+            - JS的遍历方式
+            - for(初始化值;循环结束条件;步长)
+                - jq的遍历方式
+                - jq对象.each(callback)
+                - $.each(object, [callback])
+                - for..of:
+        */
+
+        $(function () {
+            // 获取所有ul下所有的li标签
+            var cites = $("#city li");
+
+            // 遍历
+            /*for (var i = 0; i < cites.length; i++) {
+                if("上海" == cites[i].innerHTML){
+                    // break; // 结束循环
+                    continue; // 解除本次循环，继续下次循环
+                }
+                //  获取内容
+                alert(i + "：" + cites[i].innerHTML)
+
+            }*/
+
+            // jq对象.each(callback)
+            cites.each(function (index, element) {
+                // 获取li对象 第一种方式：this
+                // alert(this.innerHTML);
+                // alert($(this).html());
+
+                // 获取li对象 第二种方式：在回调函数中定义参数  index(索引) element(元素对象) 名称可自定义
+                // alert(index + "：" + element.innerHTML)
+                // 判断如果是上海，则结束循环
+                if("上海" == $(element).html()){
+                    // 如果当前function返回为false，则结束循环(break)，如果返回为true，则继续结束本次循环，继续下次循环(continue)
+                    return true;
+                }
+                alert(index + "：" + $(element).html())
+
+            })
+
+        });
 
 
     </script>

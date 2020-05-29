@@ -23,6 +23,12 @@
                 - fadeOut([speed],[easing],[fn])
                 - fadeToggle([speed,[easing],[fn]])
     - 遍历
+        - JS的遍历方式
+            - for(初始化值;循环结束条件;步长)
+        - jq的遍历方式
+            - jq对象.each(callback)
+            - $.each(object, [callback])
+            - for..of:
     - 事件绑定
     - 案例
     - 插件
