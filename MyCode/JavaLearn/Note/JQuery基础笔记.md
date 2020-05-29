@@ -105,5 +105,21 @@
         - text()：获取/设置元素的标签体纯文本内容   <a><font>内容</font></a> --> 内容
         - val()：取/设置元素的value属性值
     - 属性操作
+        - 通用属性操作
+            - attr()：获取/设置元素的属性
+            - remove()：删除属性
+            - prop()：获取/设置元素的属性
+            - removeProp()：删除属性
+            - attr和prop的区别
+                - 如果操作的是元素的固有属性，则建议使用prop
+                - 如果操作的是自定义的元素或属性，建议使用attr
+            
+            - addClass()：添加class属性值
+            - removeClass()：删除class属性值
+            - toggleClass()：切换class属性
+                - toggleClass("one")：判断元素对象上存在class=one则将属性值删除，如果元素对象上不存在class=one，则添加
+            
+            
+        - 对class属性操作 
     - CRUD
 - 案例
