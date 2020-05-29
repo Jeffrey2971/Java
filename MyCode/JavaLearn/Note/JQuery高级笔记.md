@@ -4,6 +4,12 @@
         - 三种方式显示和隐藏元素
             - 默认显示和隐藏方式
                 - show([speed,[easing],[fn]])
+                    - 参数
+                        - speed：动画的速度，三个预定义的值("slow", "normal", "fast")或表示动画时长的毫秒值
+                        - easing：用来指定切换效果，默认为"swing", 可用参数"linear"
+                            - swing：动画执行时效果先慢，中间快，最后又慢
+                            - linear：动画执行时速度为匀速的
+                        - fn：在动画执行时执行的函数，每个函数执行一次
                 - hide([speed,[easing],[fn]])
                 - toggle([speed],[easing],[fn])
     
