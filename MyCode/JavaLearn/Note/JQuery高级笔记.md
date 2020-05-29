@@ -30,5 +30,13 @@
             - $.each(object, [callback])
             - for..of: jquery3.0版本之后提供的方式
     - 事件绑定
+        - JQuery标准的绑定方式
+            - jq的对象.事件方法(回调函数);
+        - on绑定时间/off解除绑定
+            - jq对象.on("事件名称", 回调函数)
+            - jq对象.off("事件名称", 回调函数)
+        - 事件的切换
+            - toggle
+                - jq对象.toggle(fn1, fn2)
     - 案例
     - 插件
