@@ -28,7 +28,7 @@
         - jq的遍历方式
             - jq对象.each(callback)
             - $.each(object, [callback])
-            - for..of:
+            - for..of: jquery3.0版本之后提供的方式
     - 事件绑定
     - 案例
     - 插件

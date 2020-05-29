@@ -30,7 +30,7 @@
 
             }*/
 
-            // jq对象.each(callback)
+            /*// jq对象.each(callback)
             cites.each(function (index, element) {
                 // 获取li对象 第一种方式：this
                 // alert(this.innerHTML);
@@ -45,7 +45,18 @@
                 }
                 alert(index + "：" + $(element).html())
 
-            })
+            })*/
+
+            /*// $.each(object, [callback])
+            $.each(cites, function () {
+                alert($(this).html())
+
+            });*/
+
+            // for...of:jquery3.0版本之后提供的方式
+            for(li of cites){
+                alert($(li).html())
+            }
 
         });
 
