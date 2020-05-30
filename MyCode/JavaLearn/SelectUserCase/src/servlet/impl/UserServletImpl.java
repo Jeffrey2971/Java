@@ -53,7 +53,6 @@ public class UserServletImpl implements UserServlet {
                 dao.delete(Integer.parseInt(id));
             }
         }
-
     }
 
     @Override
