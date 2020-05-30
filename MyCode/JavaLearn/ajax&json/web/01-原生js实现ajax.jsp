@@ -22,14 +22,21 @@
             {// code for IE6, IE5
                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
             }
-            // 发送请求
+            // 建立连接
             /*
                 参数
                     - 请求方式：GET、POST
+                        - GET方式请求参数在url后面拼接，send()方法为空参
+                        - post方式，请求参数在send()方法中定义
                     - 请求的url路径
-                    - 同步或异步请求
+                    - 同步或异步请求：true(异步)或false(同步)
              */
-            xmlhttp.open("GET","test1.txt",true);
+            xmlhttp.open("GET","ajaxServlet?username=mable",true);
+
+            // 发送请求
+            xmlhttp.send();
+
+            // 接收并处理来自服务器的响应结果
 
 
 
@@ -40,5 +47,6 @@
 </head>
 <body>
 <input type="button" value="发送异步请求" onclick="fun();">
+<input type="text">
 </body>
 </html>
