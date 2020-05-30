@@ -80,3 +80,51 @@
                     - callback：回调函数
                     - type：响应结果的类型
         - $.post()：发送post请求
+        - 语法$.post(url, [data], [callback], [type])
+            - 参数
+                - url：请求路径
+                - data：请求参数
+                - callback：回调函数
+                - type：响应结果的类型
+                
+## JSON
+- 概念：JavaScript Object Notation     javascript对象表示法
+    - Person p = new Person();
+    - p.setName("mable");
+    - p.setAge(21);
+    - p.setGender("女")
+    
+    var p = {"name":"mable", "age":23, "gender":"女"};
+        - json现在多用于存储和交换文本信息的语法
+        - 进行数据的传输
+    
+- 语法
+    - 基本规则
+        - 数据在名称/值对中：json数据是由键值对构成的
+            - 键用引号(单双都行)引起来，也可以不使用引号
+            - 值的取值类型
+                - 数字（整数或浮点数）
+                - 字符串（在双引号中）
+                - 逻辑值（true 或 false）
+                - 数组（在方括号中）
+                - 对象（在花括号中）
+                - null
+        - 数据由逗号分隔：多个键值对由逗号分割
+        - 花括号保存对象：使用{}定义json格式
+        - 方括号保存数组：[]
+    - 获取数据
+        - json对象.键名
+        - json对象["键名"]
+        - 数组对象[角标]
+    
+- json数据和Java对象的相互转换
+    - 解析器
+        - 创建的解析器：JsonLib, Gson, fastJson, jackson
+    - json转为JavaScript对象
+    - Java对象转为json
+        - 使用步骤
+            - 导入Jackson的相关jar包
+            - 创建Jackson核心对象 ObjectMapper
+            - 调用ObjectMapper的相关方法进行转换
+    
+    
