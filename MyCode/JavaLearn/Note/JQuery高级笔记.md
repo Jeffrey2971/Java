@@ -40,6 +40,7 @@
                 - jq对象.toggle(fn1, fn2)
                     - 当单机jq对象对应的组件后，会执行fn1，第二次点击会执行fn2...
                 - 注意事项
-                
-    - 案例
+                    - 1.9版本 .toggle() 方法删除，JQuery migrate (迁移) 插件可以恢复此功能
+                    - <script src="../../js/jquery-migrate-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+    - 案例    
     - 插件
