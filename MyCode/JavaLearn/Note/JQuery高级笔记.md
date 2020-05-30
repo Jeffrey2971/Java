@@ -42,5 +42,10 @@
                 - 注意事项
                     - 1.9版本 .toggle() 方法删除，JQuery migrate (迁移) 插件可以恢复此功能
                     - <script src="../../js/jquery-migrate-1.0.0.js" type="text/javascript" charset="utf-8"></script>
-    - 案例    
-    - 插件
+    - 案例
+    - 插件：增强JQuery的功能
+        - 实现插件的方式
+            - $.fn.extend(object)
+                - 增强通过JQuery获取的对象的功能    $("#id")
+            - $.extends(object)
+                - 增强JQuery对象自身的功能   $/JQuery
