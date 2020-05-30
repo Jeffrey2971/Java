@@ -37,6 +37,20 @@
             xmlhttp.send();
 
             // 接收并处理来自服务器的响应结果
+            // 获取方式：xmlhttp.responseText
+            // 当服务器响应成功后再获取结果
+            // 当xmlhttp对象的就绪状态改变时，会触发onreadystatechange事件
+            xmlhttp.onreadystatechange=function()
+            {
+                // 判断readyState就绪状态是否为4，判断status响应状态码是否为200
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    // 获取服务器的响应结果
+                    var responseText = xmlhttp.responseText;
+                    alert(responseText)
+                }
+            }
+
 
 
 
