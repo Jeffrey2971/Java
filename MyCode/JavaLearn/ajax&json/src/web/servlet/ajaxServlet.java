@@ -13,11 +13,11 @@ public class ajaxServlet extends HttpServlet {
         // 获取请求参数
         String username = request.getParameter("username");
         // 处理业务逻辑，耗时
-        try {
+        /*try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // 打印
         System.out.println(username);
