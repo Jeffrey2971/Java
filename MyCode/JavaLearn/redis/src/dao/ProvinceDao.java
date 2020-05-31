@@ -1,9 +1,9 @@
 package dao;
 
-import domain.province;
+import domain.Province;
 
 import java.util.List;
 
 public interface ProvinceDao {
-    public List<province> findAll();
+    public List<Province> findAll();
 }

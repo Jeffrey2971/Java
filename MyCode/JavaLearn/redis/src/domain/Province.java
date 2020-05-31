@@ -1,6 +1,6 @@
 package domain;
 
-public class province {
+public class Province {
     private int id;
     private String name;
 
@@ -20,11 +20,4 @@ public class province {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "province{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
