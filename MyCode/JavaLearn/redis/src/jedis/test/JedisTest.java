@@ -2,6 +2,8 @@ package jedis.test;
 
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.List;
 import java.util.Map;
@@ -121,13 +123,38 @@ public class JedisTest {
             // sortedset 存储
         jedis.zadd("mysrotedset", 3, "亚瑟");
         jedis.zadd("mysrotedset", 30, "后裔");
-        jedis.zadd("mysrotedset", 25, "孙悟空");
+        jedis.zadd("mysrotedset", 55, "孙悟空");
             // sortedset获取
         Set<String> mysrotedset = jedis.zrange("mysrotedset", 0, -1);
         System.out.println(mysrotedset);
 
 
         // 关闭连接
+        jedis.close();
+    }
+
+
+    /**
+     * Jedis连接池使用
+     */
+    @Test
+    public void test6(){
+        // 创建一个配置对象
+        JedisPoolConfig config = new JedisPoolConfig();
+        config.setMaxTotal(50);
+        config.setMaxIdle(10);
+
+        // 创建Jedis连接池对象
+        JedisPool jedisPool = new JedisPool(config, "localhost", 6379);
+
+        // 获取连接
+        Jedis jedis = jedisPool.getResource();
+
+        // 使用
+        jedis.set("hehe", "heihei");
+
+
+        // 关闭 归还到连接池中
         jedis.close();
     }
 

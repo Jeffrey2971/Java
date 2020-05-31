@@ -108,3 +108,7 @@
                 - smembers：获取所有元素
             - 有序集合类型：sortedset 不允许重复，且元素有序排序
                 - zadd
+    - Jedis连接池：JedisPool
+        - 使用
+            - 创建JedisPool连接池对象
+            - 调用方法getResource()方法获取Jedis连接
