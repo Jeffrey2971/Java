@@ -140,4 +140,4 @@
     - 服务器响应数据，在客户端使用时，要想当做json数据格式使用的
         - $.get(type)：将最后一个参数type指定为"json"
         - 在服务器端设置mime类型
-            - application/json
+            - response.setContentType("application/json;charset=utf-8")
