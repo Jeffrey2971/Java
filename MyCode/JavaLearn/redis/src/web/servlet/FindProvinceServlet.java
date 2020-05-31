@@ -16,12 +16,18 @@ import java.util.List;
 @WebServlet("/findProvinceServlet")
 public class FindProvinceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 1、调用Service查询
+        /*// 1、调用Service查询
         ProvinceService service = new ProvinceServiceImpl();
         List<Province> list = service.findAll();
         // 2、序列化List为Json
         ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(list);
+        String json = mapper.writeValueAsString(list);*/
+
+        // 1、调用Service查询
+        ProvinceService service = new ProvinceServiceImpl();
+        String json = service.findAllJson();
+
+
         System.out.println("JSON：" + json);
         // 3、响应结果
         response.setContentType("application/json;charset=utf-8");

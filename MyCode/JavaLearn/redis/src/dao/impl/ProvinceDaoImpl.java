@@ -17,9 +17,10 @@ public class ProvinceDaoImpl implements ProvinceDao {
         @Override
         public List<Province> findAll() {
             //1.定义sql
-            String sql = "select * from province ";
+            String sql = "select * from province";
             //2.执行sql
             List<Province> list = template.query(sql, new BeanPropertyRowMapper<Province>(Province.class));
+            System.out.println("查询结果：" + list);
             return list;
         }
     }
