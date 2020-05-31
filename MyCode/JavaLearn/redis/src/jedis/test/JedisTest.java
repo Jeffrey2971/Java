@@ -1,5 +1,6 @@
 package jedis.test;
 
+import jedis.util.JedisPoolUtils;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -156,6 +157,18 @@ public class JedisTest {
 
         // 关闭 归还到连接池中
         jedis.close();
+    }
+
+    /**
+     * Jedis连接池工具类使用
+     */
+    @Test
+    public void test7(){
+        // 通过连接池获取
+        Jedis jedis = JedisPoolUtils.getJedis();
+        jedis.set("hello", "world");
+        jedis.close();
+
     }
 
 }
