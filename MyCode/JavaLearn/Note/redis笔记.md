@@ -78,7 +78,33 @@
                 - appendfsync always：每一次操作都执行持久化
                 - appendfsync everysec：每隔一秒操作一次都执行持久化
                 - appendonly no：不持久化
-                 
-
-        
-- Java客户端redis
+- Java客户端 Jedis
+    - Jedis：一款Java操作redis数据库的工具
+    - 使用步骤
+        - 下载jedis的相关jar包
+        - 使用
+            // 获取连接
+            Jedis jedis = new Jedis("localhost", 6379);
+            // 操作
+            jedis.set("username", "jeffrey");
+            // 关闭连接
+            jedis.close();
+            
+        - Jedis操作各种redis中的数据结构
+            - 字符串类型：string
+                - set
+                - get
+            - 哈希类型：hash map格式
+                - hset
+                - hget
+                - hgetAll
+            - 列表类型：list linkedlist格式，支持重复元素
+                - lpush
+                - rpush
+                - lpop / rpop
+                - lrange start end
+            - 集合类型：set：不允许重复元素
+                - sadd
+                - smembers：获取所有元素
+            - 有序集合类型：sortedset 不允许重复，且元素有序排序
+                - zadd
