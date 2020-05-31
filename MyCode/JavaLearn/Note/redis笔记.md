@@ -52,7 +52,24 @@
         - 获取：zrange key start end
         - 删除：zrem key value
     
-    - 通用命令
-        - keys *：查询所有的键
-        - type key：获取键对应的value类型
-        - del key：删除指定的key value
+- 通用命令
+    - keys *：查询所有的键
+    - type key：获取键对应的value类型
+    - del key：删除指定的key value
+
+- 持久化
+    - redis是一个内存数据库，当redis服务器重启或电脑重启，数据会丢失，可以将redis内存中的数据持久化保存到硬盘的文件中
+    - redis持久化机制
+        - RDB：默认方式，不需要进行配置，默认使用这种机制
+            - 在一定的间隔时间中，检测key的变化情况，然后持久化数据
+            - 编辑/etc/redis/redis.config配置文件
+                 #   after 900 sec (15 min) if at least 1 key changed
+                  save 900 1
+                 #   after 300 sec (5 min) if at least 10 keys changed
+                  save 300 10
+                 #   after 60 sec if at least 10000 keys changed
+                 save 60 10000
+             - 重新启动redis服务器，并制定配置文件名称
+                - redis-server /etc/redis/redis.config
+        - AOF：日志记录方式，可以记录每一条命令的操作，每一次命令操作后持久化数据
+        
