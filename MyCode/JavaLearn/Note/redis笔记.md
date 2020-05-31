@@ -72,4 +72,13 @@
              - 重新启动redis服务器，并制定配置文件名称
                 - redis-server /etc/redis/redis.config
         - AOF：日志记录方式，可以记录每一条命令的操作，每一次命令操作后持久化数据
+            - 编辑/etc/redis/redis.config文件
+                - appendonly no：默认为关闭(关闭aof) --> appendonly yes(开启aof)
+                
+                - appendfsync always：每一次操作都执行持久化
+                - appendfsync everysec：每隔一秒操作一次都执行持久化
+                - appendonly no：不持久化
+                 
+
         
+- Java客户端redis
