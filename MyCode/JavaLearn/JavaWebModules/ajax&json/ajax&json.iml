@@ -6,16 +6,14 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../../ajax&amp;json/web" relative="/" />
         </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/../../ajax&amp;json/src" />
-        </sourceRoots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../JavaWebModules/ajax&amp;json">
-      <sourceFolder url="file://$MODULE_DIR$/../../JavaWebModules/ajax&amp;json/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
