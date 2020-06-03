@@ -19,7 +19,26 @@
 	<!--导入jquery-->
 	<script src="js/jquery-3.3.1.js"></script>
 	<script>
+		// 给登录按钮绑定点击事件
+		$(function () {
+			$("#btn_sub").click(function () {
+				// 发送ajax请求，提交表单数据
+				$.post("loginServlet", $("#loginForm").serialize(), function (data) {
+					// data：{flag:true/false, errorMsg:msg, data}
+					if(data.flag){
+						// 登陆成功
+						location.href = "index.html"
+					}else{
+						// 登录失败
+						$("#errorMsg").html(data.errorMsg);
+					}
 
+				});
+
+			});
+		});
+
+		// 处理响应结果
 	</script>
 </head>
 
@@ -39,7 +58,7 @@
         	<div class="login_inner">
 				
 				<!--登录错误提示消息-->
-        		<div id="errorMsg" class="alert alert-danger" ></div>
+        		<div id="errorMsg" class="alert alert-danger" style="text-align: center"></div>
 				<form id="loginForm" action="" method="post" accept-charset="utf-8">
         			<input type="hidden" name="action" value="login"/>
 					<input name="username" type="text" placeholder="请输入账号" autocomplete="off">
@@ -55,7 +74,7 @@
 					</script>
 			</div>
 			<div class="submit_btn">
-        				<button type="button">登录</button>
+        				<button type="button" id="btn_sub">登录</button>
         				<div class="auto_login">
         					<input type="checkbox" name="" class="checkbox">
         					<span>自动登录</span>

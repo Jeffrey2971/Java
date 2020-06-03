@@ -76,11 +76,13 @@ public class UserDaoImpl implements UserDao {
     public User findByUsernameAndPassword(String username, String password) {
         User user = null;
         try {
-            String sql = "select * from tab_user where code = ? and password = ?";
+            String sql = "select * from tab_user where username = ? and password = ?";
             user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
+            return user;
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
+
         return user;
     }
 }

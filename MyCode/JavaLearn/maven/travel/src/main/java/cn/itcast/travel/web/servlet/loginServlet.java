@@ -34,19 +34,19 @@ public class loginServlet extends HttpServlet {
 
         ResultInfo info = new ResultInfo();
         // 判断用户对象是否为null
-        if(u == null){
+        if (u == null) {
             // 用户名或密码错误
             info.setFlag(false);
             info.setErrorMsg("用户名或密码错误！");
         }
         // 判断用户是否激活
-        if(u != null && "Y".equals(u.getStatus())){
+        if (u != null && !"Y".equals(u.getStatus())) {
             // 用户尚未激活
             info.setFlag(false);
             info.setErrorMsg("您好，请先激活");
         }
         // 判断登录是否成功
-        if(u!=null && "Y".equals(u.getStatus())){
+        if (u != null && "Y".equals(u.getStatus())) {
             // 登陆成功
             info.setFlag(true);
         }
@@ -54,7 +54,6 @@ public class loginServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=utf-8");
         mapper.writeValue(response.getOutputStream(), info);
-
 
 
     }
