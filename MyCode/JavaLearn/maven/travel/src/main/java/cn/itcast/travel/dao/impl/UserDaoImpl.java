@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void save(User user) {
         // 定义sql
-        String sql = "insert into tab_user(username, password, name, birthday, sex, telephone, email) values(?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into tab_user(username, password, name, birthday, sex, telephone, email, status, code) values(?,?,?,?,?,?,?,?,?)";
         // 执行sql
         template.update(sql, user.getUsername(), user.getPassword(), user.getName(), user.getBirthday(), user.getSex(), user.getTelephone(), user.getEmail(),user.getStatus(), user.getCode());
     }
@@ -60,7 +60,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public void updateStatus(User user) {
-        String sql = "update user set status = 'Y' where id=?";
+        String sql = "update tab_user set status = 'Y' where uid = ?";
         template.update(sql, user.getUid());
 
     }

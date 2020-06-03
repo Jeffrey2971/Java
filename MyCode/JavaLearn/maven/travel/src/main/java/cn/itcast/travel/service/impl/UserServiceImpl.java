@@ -58,4 +58,14 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+    /**
+     * 登录
+     * @param user
+     * @return
+     */
+    @Override
+    public User login(User user) {
+        return null;
+    }
 }
