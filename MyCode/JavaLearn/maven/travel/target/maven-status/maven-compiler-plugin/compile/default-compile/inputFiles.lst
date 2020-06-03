@@ -16,4 +16,5 @@
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/util/JedisUtil.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/domain/Favorite.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/util/Md5Util.java
+/home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/web/servlet/ActiveUserServlet.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/service/UserService.java

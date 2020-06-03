@@ -47,6 +47,15 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean active(String code) {
-        return false;
+        // 根据激活码查询用户对象
+        User user = userDao.findByCode(code);
+        if(user!=null){
+            //  用户存在，调用dao的修改激活状态的激活码
+            userDao.updateStatus(user);
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }
