@@ -49,3 +49,7 @@
                 - 增强通过JQuery获取的对象的功能    $("#id")
             - $.extends(object)
                 - 增强JQuery对象自身的功能   $/JQuery
+                
+## 补充
+- serialize()
+    - 将表单数据序列化为key:value格式
