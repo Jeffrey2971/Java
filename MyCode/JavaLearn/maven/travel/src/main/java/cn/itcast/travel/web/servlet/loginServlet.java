@@ -47,6 +47,7 @@ public class loginServlet extends HttpServlet {
         }
         // 判断登录是否成功
         if (u != null && "Y".equals(u.getStatus())) {
+            request.getSession().setAttribute("user",u);//登录成功标记
             // 登陆成功
             info.setFlag(true);
         }

@@ -1,6 +1,4 @@
 package cn.itcast.travel.web.servlet;
-
-import cn.itcast.travel.domain.User;
 import cn.itcast.travel.service.UserService;
 import cn.itcast.travel.service.impl.UserServiceImpl;
 

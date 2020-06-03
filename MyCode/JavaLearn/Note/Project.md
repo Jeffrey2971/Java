@@ -70,5 +70,12 @@
         - LoginServlet
         - UserService
         - UserDao
+- idea用户姓名的提示
 
-## 退出 
+## 退出
+- 已登录：session中有user对象
+- 实现步骤
+    - 访问servlet，将session销毁
+    - 跳转到登录页面
+- 代码实现
+    - 编写前台代码
