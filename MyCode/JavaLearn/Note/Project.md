@@ -40,7 +40,27 @@
         - 验证码：非空
     - 异步(ajax)提交表单
         - 在此使用异步提交表单是为了获取服务器响应的数据，因为前台使用的是HTML作为视图层，不能够直接从servlet相关的域对象获取值，只能通过ajax方式获取相应数据
-    
+- 后台代码实现
+    - 编写RegistUserServlet
+    - 编写UserService以及UserServiceImpl
+    - 编写UserDao以及UserDao实现类
+
+## 邮件激活
+- 为了保证用户填写的邮箱是正确的，可以推广一些宣传信息到用户邮箱中
+- 发送邮件
+    - 使用工具类
+- 用户点击邮件
+    - 用户激活其实就是修改用户表中的status为Y
+
+- 用户点击邮件并激活
+    - 代码实现
+- 激活代码实现
+    - ActiveUserService
+    - UserService: active
+    - UserDao
+        - findByCode
+        - updateStatus
+
 
 ## 登录
 

@@ -111,7 +111,16 @@
 				if(checkUsername() && checkPassword() && checkEmail() && checkName() && checkNumber()){
 					// 校验通过，发送ajax请求提交表单数据(不提交表单)
 					$.post("registUserServlet", $(this).serialize(), function (data) {
-						// 处理服务器响应的数据 data
+						// 处理服务器响应的数据 data {flag:true/false, errorMsg:"msg"}
+                        if (data.flag){
+                            // 注册成功，跳转成功页面
+                            location.href = "register_ok.html";
+
+                        }else{
+                            // 注册失败，给error_msg添加提示信息
+                            $("#error_msg").html(data.errorMsg);
+
+                        }
 
 
 					});
@@ -144,7 +153,7 @@
             <p>USER REGISTER</p>
         </div>
         <div class="rg_form_center">
-
+            <div id="error_msg" style="color:red;text-align: center" ></div>
             <!--注册表单-->
             <form id="registerForm" action="user">
                 <!--提交处理请求的标识符-->
