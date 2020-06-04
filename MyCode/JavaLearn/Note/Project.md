@@ -98,4 +98,17 @@
 ## redis缓存查询
 - 期望数据库中存储的顺序就是今后展示的顺序
 
-            
+## 旅游线路分页展示功能
+- 点击了不同的分类后，将来看到的旅游线路是不一样的，通过分析数据库表结构发现旅游线路和分类表时
+- 类别id的传递
+    - Redis中查询 score(cid)
+    - 页面传递cid
+        $(function () {
+              var search = location.search;
+              // alert(search)
+              // 切割字符串，拿到第二个值 //id=id
+              var cid = search.split("=")[1];
+              alert(cid)
+  
+        });
+    
