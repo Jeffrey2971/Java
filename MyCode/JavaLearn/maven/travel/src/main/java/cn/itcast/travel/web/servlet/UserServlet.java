@@ -18,7 +18,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 @WebServlet("/user/*") // user/add user/find ...
-
 public class UserServlet extends BaseServlet {
 
     /**
@@ -30,10 +29,11 @@ public class UserServlet extends BaseServlet {
      */
 
     // 声明一个UserService业务对象
-    private UserService service = new UserServiceImpl();
+    private final UserService service = new UserServiceImpl();
 
 
     public void regist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("regist");
         // 验证码校验
         String checkCode = request.getParameter("check");
         // 从session中获取验证码比较

@@ -82,3 +82,13 @@
 
 ## 优化servlet
 - 减少Servlet的数量，现在是一个功能一个servlet，将其优化为一个模块一个Servlet，相当于在数据库中，一张表对应一个Servlet，在Servlet中提供不同的方法，完成用户的请求
+
+## 分类数据展示
+- 分析
+- 代码实现
+    - 后台代码
+        - CategoryServlet
+        - CategoryService
+        - CategoryDao
+        
+    - 前台代码

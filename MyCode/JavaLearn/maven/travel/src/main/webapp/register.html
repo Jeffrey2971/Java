@@ -110,7 +110,7 @@
             	// 发送数据到服务器
 				if(checkUsername() && checkPassword() && checkEmail() && checkName() && checkNumber()){
 					// 校验通过，发送ajax请求提交表单数据(不提交表单)
-					$.post("registUserServlet", $(this).serialize(), function (data) {
+					$.post("user/regist", $(this).serialize(), function (data) {
 						// 处理服务器响应的数据 data {flag:true/false, errorMsg:"msg"}
                         if (data.flag){
                             // 注册成功，跳转成功页面
