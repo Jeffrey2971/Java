@@ -103,6 +103,12 @@
 - 类别id的传递
     - Redis中查询 score(cid)
     - 页面传递cid
+        for (var i = 0; i < data.length; i++) {
+            var li = '<li><a href="route_list.html?cid=' + data[i].cid + '">' + data[i].cname + '</a></li>'
+            lis += li;
+        }
+    - 传递cid
+    - Header.html获取cid
         $(function () {
               var search = location.search;
               // alert(search)
