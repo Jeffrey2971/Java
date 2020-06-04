@@ -123,4 +123,10 @@
 
 - 分页展示旅游线路数据：
     - 分析
-    - 
+    - 编码
+        - 客户端代码编写
+        - 服务器端代码编写
+            - 创建PageBean
+                - RouteServlet
+                - RouteService
+                - RouteDao
