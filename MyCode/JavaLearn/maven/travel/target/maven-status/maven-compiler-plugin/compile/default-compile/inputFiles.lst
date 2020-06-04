@@ -12,6 +12,7 @@
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/domain/Category.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/domain/User.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/dao/UserDao.java
+/home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/web/servlet/exitServlet.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/web/filter/CharchaterFilter.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/domain/Route.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/web/servlet/loginServlet.java
