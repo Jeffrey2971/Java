@@ -102,6 +102,7 @@
 - 点击了不同的分类后，将来看到的旅游线路是不一样的，通过分析数据库表结构发现旅游线路和分类表时
 - 类别id的传递
     - Redis中查询 score(cid)
+        Set<Tuple> categorys = jedis.zrangeWithScores("category", 0, -1);
     - 页面传递cid
         for (var i = 0; i < data.length; i++) {
             var li = '<li><a href="route_list.html?cid=' + data[i].cid + '">' + data[i].cname + '</a></li>'
@@ -118,3 +119,8 @@
   
         });
     
+- 根据id查询不同类别的旅游线路数据并分页
+
+- 分页展示旅游线路数据：
+    - 分析
+    - 
