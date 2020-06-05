@@ -13,7 +13,7 @@ public class RouteDaoImpl implements RouteDao {
     private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
-    public int findTotalCount(int cid,String rname) {
+    public int findTotalCount(int cid, String rname) {
         //String sql = "select count(*) from tab_route where cid = ?";
         //1.定义sql模板
         String sql = "select count(*) from tab_route where 1=1 ";
@@ -21,26 +21,26 @@ public class RouteDaoImpl implements RouteDao {
 
         List params = new ArrayList();//条件们
         //2.判断参数是否有值
-        if(cid != 0){
-            sb.append( " and cid = ? ");
+        if (cid != 0) {
+            sb.append(" and cid = ? ");
 
             params.add(cid);//添加？对应的值
         }
 
-        if(rname != null && rname.length() > 0){
+        if (rname != null && rname.length() > 0) {
             sb.append(" and rname like ? ");
 
-            params.add("%"+rname+"%");
+            params.add("%" + rname + "%");
         }
 
         sql = sb.toString();
 
 
-        return template.queryForObject(sql,Integer.class,params.toArray());
+        return template.queryForObject(sql, Integer.class, params.toArray());
     }
 
     @Override
-    public List<Route> findByPage(int cid, int start, int pageSize,String rname) {
+    public List<Route> findByPage(int cid, int start, int pageSize, String rname) {
         //String sql = "select * from tab_route where cid = ? and rname like ?  limit ? , ?";
         String sql = " select * from tab_route where 1 = 1 ";
         //1.定义sql模板
@@ -48,16 +48,16 @@ public class RouteDaoImpl implements RouteDao {
 
         List params = new ArrayList();//条件们
         //2.判断参数是否有值
-        if(cid != 0){
-            sb.append( " and cid = ? ");
+        if (cid != 0) {
+            sb.append(" and cid = ? ");
 
             params.add(cid);//添加？对应的值
         }
 
-        if(rname != null && rname.length() > 0){
-            sb.append(" and rname like ? ");
+        if (rname != null && rname.length() > 0) {
+            sb.append(" and rname like ? "); // 不用加=
 
-            params.add("%"+rname+"%");
+            params.add("%" + rname + "%");
         }
         sb.append(" limit ? , ? ");//分页条件
 
@@ -67,12 +67,12 @@ public class RouteDaoImpl implements RouteDao {
         params.add(pageSize);
 
 
-        return template.query(sql,new BeanPropertyRowMapper<Route>(Route.class),params.toArray());
+        return template.query(sql, new BeanPropertyRowMapper<Route>(Route.class), params.toArray());
     }
 
     @Override
     public Route findOne(int rid) {
         String sql = "select * from tab_route where rid = ?";
-        return template.queryForObject(sql,new BeanPropertyRowMapper<Route>(Route.class),rid);
+        return template.queryForObject(sql, new BeanPropertyRowMapper<Route>(Route.class), rid);
     }
 }
