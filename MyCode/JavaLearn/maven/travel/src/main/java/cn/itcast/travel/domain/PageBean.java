@@ -1,18 +1,18 @@
 package cn.itcast.travel.domain;
 
-
 import java.util.List;
 
 /**
  * 分页对象
  */
 public class PageBean<T> {
-    private int totalCount; // 总条数
-    private int totalPage; // 总页数
-    private int currentPage; // 每页的条数
-    private int pageSize; // 当前页码
 
-    private List<T> list; // 每页显示的数据集合
+    private int totalCount;//总记录数
+    private int totalPage;//总页数
+    private int currentPage;//当前页码
+    private int pageSize;//每页显示的条数
+
+    private List<T> list;//每页显示的数据集合
 
     public int getTotalCount() {
         return totalCount;
@@ -52,16 +52,5 @@ public class PageBean<T> {
 
     public void setList(List<T> list) {
         this.list = list;
-    }
-
-    @Override
-    public String toString() {
-        return "PageBean{" +
-                "totalCount=" + totalCount +
-                ", totalPage=" + totalPage +
-                ", currentPage=" + currentPage +
-                ", pageSize=" + pageSize +
-                ", list=" + list +
-                '}';
     }
 }

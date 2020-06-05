@@ -130,3 +130,8 @@
                 - RouteServlet
                 - RouteService
                 - RouteDao
+## 旅游线路名称模糊查询
+- 查询参数的传递
+- RouteServlet
+- RouteService
+- RouteDao
