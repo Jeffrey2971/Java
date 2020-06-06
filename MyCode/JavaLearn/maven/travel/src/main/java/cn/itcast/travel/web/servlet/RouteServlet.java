@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/route/*")
 public class RouteServlet extends BaseServlet {
 
-    private RouteService routeService = new RouteServiceImpl();
+    private final RouteService routeService = new RouteServiceImpl();
 
     /**
      * 分页查询
