@@ -135,3 +135,12 @@
 - RouteServlet
 - RouteService
 - RouteDao
+## 详情页面查询
+- 根据前端返回的sid查询
+    - 后端代码
+    - 前端代码
+        - Route_detail.html加载后
+            - 获取rid
+            - 发送ajax请求获取route对象
+            - 解析对象的数据
+
