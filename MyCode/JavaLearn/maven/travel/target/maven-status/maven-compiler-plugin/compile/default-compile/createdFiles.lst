@@ -1,0 +1,4 @@
+cn/itcast/travel/service/impl/FavoriteServiceImpl.class
+cn/itcast/travel/dao/FavoriteDao.class
+cn/itcast/travel/dao/impl/FavoriteDaoImpl.class
+cn/itcast/travel/service/FavoriteService.class

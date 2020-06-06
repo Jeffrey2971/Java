@@ -83,9 +83,9 @@
             <div class="pros_price">
                 <p class="price"><strong id="price">¥2699.00</strong><span>起</span></p>
                 <p class="collect">
-                    <a class="btn"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
+                    <a class="btn" id="favorite"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
 
-                    <a class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
+<!--                    <a class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
                     <span>已收藏100次</span>
                 </p>
             </div>
@@ -244,6 +244,26 @@
         });
 
     });
+
+    $(function () {
+        // 发送请求，判断用户是否收藏过该线路
+        var rid = getParameter("rid");
+        $.get("route/isFavorite", {rid:rid}, function (flag) {
+            if(flag){
+                // 用户已经收藏过，设置收藏按钮的样式
+                // class="btn already" disabled="disabled"
+                $("#favorite").addClass("already");
+                $("#favorite").prop("disabled", disabled)
+
+            }else{
+                // 用户尚未收藏
+                alert()
+
+            }
+
+        })
+
+    })
 
 </script>
 </body>

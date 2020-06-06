@@ -1,8 +1,10 @@
 package cn.itcast.travel.service.impl;
 
+import cn.itcast.travel.dao.FavoriteDao;
 import cn.itcast.travel.dao.RouteDao;
 import cn.itcast.travel.dao.RouteImgDao;
 import cn.itcast.travel.dao.SellerDao;
+import cn.itcast.travel.dao.impl.FavoriteDaoImpl;
 import cn.itcast.travel.dao.impl.RouteDaoImpl;
 import cn.itcast.travel.dao.impl.RouteImgDaoImpl;
 import cn.itcast.travel.dao.impl.SellerDaoImpl;
@@ -18,6 +20,7 @@ public class RouteServiceImpl implements RouteService {
     private final RouteDao routeDao = new RouteDaoImpl();
     private final RouteImgDao routeImgDao = new RouteImgDaoImpl();
     private final SellerDao sellerDao = new SellerDaoImpl();
+    private final FavoriteDao favoriteDao = new FavoriteDaoImpl();
 
 
     @Override
@@ -56,6 +59,9 @@ public class RouteServiceImpl implements RouteService {
         // 根据route的sid(商家id)查询商家对象
         Seller seller = sellerDao.findBySid(route.getSid());
         route.setSeller(seller);
+        // 查询收藏次数
+        int count = favoriteDao.findCountByRid(route.getRid());
+        route.setCount(count);
         return route;
     }
 

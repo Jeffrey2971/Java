@@ -3,7 +3,9 @@ package cn.itcast.travel.web.servlet;
 import cn.itcast.travel.domain.PageBean;
 import cn.itcast.travel.domain.Route;
 import cn.itcast.travel.domain.User;
+import cn.itcast.travel.service.FavoriteService;
 import cn.itcast.travel.service.RouteService;
+import cn.itcast.travel.service.impl.FavoriteServiceImpl;
 import cn.itcast.travel.service.impl.RouteServiceImpl;
 
 import javax.servlet.ServletException;
@@ -16,6 +18,8 @@ import java.io.IOException;
 public class RouteServlet extends BaseServlet {
 
     private final RouteService routeService = new RouteServiceImpl();
+    private final FavoriteService favoriteService = new FavoriteServiceImpl();
+
 
     /**
      * 分页查询
@@ -98,6 +102,9 @@ public class RouteServlet extends BaseServlet {
             uid = user.getUid();
         }
         // 调用favoriteService查询是否收藏
+        boolean flag = favoriteService.isFavorite(rid, uid);
+        // 写回客户端
+        writeValue(flag, response);
 
 
     }
