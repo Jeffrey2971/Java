@@ -94,10 +94,10 @@ public class RouteServlet extends BaseServlet {
         // 获取当前登录用户的User
         User user = (User) request.getSession().getAttribute("user");
         int uid; // 用户id
-        if(user == null){
+        if (user == null) {
             // 用户未登录
             uid = 0;
-        }else{
+        } else {
             // 用户已登录
             uid = user.getUid();
         }
@@ -106,7 +106,32 @@ public class RouteServlet extends BaseServlet {
         // 写回客户端
         writeValue(flag, response);
 
-
     }
 
-}
+
+    /**
+     * 添加收藏
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void addFavorite(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 获取线路rid
+        String rid = request.getParameter("rid");
+        // 获取当前登录的用户
+        User user = (User) request.getSession().getAttribute("user");
+        int uid; // 用户id
+        if (user == null) {
+            // 用户未登录
+            return;
+        } else {
+            // 用户已登录
+            uid = user.getUid();
+        }
+        // 调用service添加
+        favoriteService.add(rid, uid);
+    }
+
+
+    }

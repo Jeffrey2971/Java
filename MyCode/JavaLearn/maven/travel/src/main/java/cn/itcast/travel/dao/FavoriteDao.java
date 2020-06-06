@@ -17,4 +17,11 @@ public interface FavoriteDao {
      * @return
      */
     int findCountByRid(int rid);
+
+    /**
+     * 添加收藏的
+     * @param parseInt
+     * @param uid
+     */
+    void add(int parseInt, int uid);
 }

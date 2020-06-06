@@ -30,7 +30,7 @@
                 <a class="up_img up_img_disable"></a>
                 <a title="" class="little_img"
                    data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m40920d0669855e745d97f9ad1df966ebb.jpg">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m20920d0669855e745d97f9ad1df966ebb.jpg">
+                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m20920d0669855e745d97f9ad1df966ebb.jpg" alt="">
                 </a>
                 <a title="" class="little_img cur_img"
                    data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m49788843d72171643297ccc033d9288ee.jpg">
@@ -47,7 +47,8 @@
                 <a title="" class="little_img"
                    data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m45ea00f6eba562a767b5095bbf8cffe07.jpg"
                    style="display:none;">
-                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m25ea00f6eba562a767b5095bbf8cffe07.jpg">
+                    <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m25ea00f6eba562
+                    a767b5095bbf8cffe07.jpg">
                 </a>
                 <a title="" class="little_img"
                    data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4265ec488cd1bc7ce749bc8c9b34b87bc.jpg"
@@ -83,10 +84,10 @@
             <div class="pros_price">
                 <p class="price"><strong id="price">¥2699.00</strong><span>起</span></p>
                 <p class="collect">
-                    <a class="btn" id="favorite"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
+                    <a class="btn" id="favorite" onclick="addFavorite()"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
 
 <!--                    <a class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
-                    <span>已收藏100次</span>
+                    <span id="favoriteCount">已收藏100次</span>
                 </p>
             </div>
         </div>
@@ -210,6 +211,7 @@
             $("#sname").html(route.seller.sname);
             $("#consphone").html(route.seller.consphone);
             $("#address").html(route.seller.address);
+            $("#favoriteCount").html("已收藏" + route.count + "次")
 
             // 图片展示
 
@@ -253,17 +255,46 @@
                 // 用户已经收藏过，设置收藏按钮的样式
                 // class="btn already" disabled="disabled"
                 $("#favorite").addClass("already");
-                $("#favorite").prop("disabled", disabled)
+                $("#favorite").attr("disabled", "disabled");
+
+                // 删除按钮点击事件
+                $("#favorite").removeAttr("onclick");
 
             }else{
                 // 用户尚未收藏
-                alert()
 
             }
 
-        })
+        });
 
-    })
+    });
+
+    /*
+        点击收藏按钮出发的方法
+         */
+    function addFavorite() {
+        // 判断用户是否登录
+        $.get("user/findOne", {}, function (user) {
+            var rid = getParameter("rid");
+            if(user){
+                // 用户已登录
+                $.get("route/addFavorite", {rid:rid}, function () {
+                    // 添加
+                    alert("收藏成功～");
+                    // 手动刷新页面
+                    location.reload();
+
+                });
+            }else{
+                // 用户未登陆
+                alert("请先登录～");
+                location.href = 'http://localhost:8080/travel/login.html';
+            }
+        });
+
+
+    }
+
 
 </script>
 </body>
