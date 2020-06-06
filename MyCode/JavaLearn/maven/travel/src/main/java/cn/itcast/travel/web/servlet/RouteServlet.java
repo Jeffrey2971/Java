@@ -69,12 +69,13 @@ public class RouteServlet extends BaseServlet {
      * @throws IOException
      */
     public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        //1.接收id
+        // 接收id
         String rid = request.getParameter("rid");
-        //2.调用service查询route对象
+        // 调用Service查询
         Route route = routeService.findOne(rid);
-        //3.转为json写回客户端
-        writeValue(route,response);
+        // 转为json写回客户端
+        writeValue(route, response);
+
     }
-}
+
+    }

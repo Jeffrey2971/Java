@@ -15,11 +15,10 @@ import cn.itcast.travel.service.RouteService;
 import java.util.List;
 
 public class RouteServiceImpl implements RouteService {
-    private RouteDao routeDao = new RouteDaoImpl();
+    private final RouteDao routeDao = new RouteDaoImpl();
+    private final RouteImgDao routeImgDao = new RouteImgDaoImpl();
+    private final SellerDao sellerDao = new SellerDaoImpl();
 
-    private RouteImgDao routeImgDao = new RouteImgDaoImpl();
-
-    private SellerDao sellerDao = new SellerDaoImpl();
 
     @Override
     public PageBean<Route> pageQuery(int cid, int currentPage, int pageSize,String rname ) {
@@ -48,17 +47,16 @@ public class RouteServiceImpl implements RouteService {
 
     @Override
     public Route findOne(String rid) {
-        //1.根据id去route表中查询route对象
+        // 根据id去route表中查询route对象
         Route route = routeDao.findOne(Integer.parseInt(rid));
-
-        //2.根据route的id 查询图片集合信息
-        List<RouteImg> routeImgList = routeImgDao.findByRid(route.getRid());
-        //2.2将集合设置到route对象
+        // 根据route的id查询图片集合信息
+        List<RouteImg> routeImgList = routeImgDao.findByRid(Integer.parseInt(rid));
+        // 将集合设置到route对象中
         route.setRouteImgList(routeImgList);
-        //3.根据route的sid（商家id）查询商家对象
-        Seller seller = sellerDao.findById(route.getSid());
+        // 根据route的sid(商家id)查询商家对象
+        Seller seller = sellerDao.findBySid(route.getSid());
         route.setSeller(seller);
-
         return route;
     }
+
 }
