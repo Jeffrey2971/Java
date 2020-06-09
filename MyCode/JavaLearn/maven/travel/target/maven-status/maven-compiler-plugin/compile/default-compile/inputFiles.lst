@@ -1,6 +1,7 @@
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/service/impl/FavoriteServiceImpl.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/domain/ResultInfo.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/util/JDBCUtils.java
+/home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/web/servlet/CategoryServlet.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/domain/PageBean.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/web/servlet/CheckCodeServlet.java
 /home/jeffrey/IdeaProjects/JavaLearn/MyCode/JavaLearn/maven/travel/src/main/java/cn/itcast/travel/dao/FavoriteDao.java
